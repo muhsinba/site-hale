@@ -1,0 +1,25 @@
+[Unit]
+Description=site-hale (Next.js)
+After=network.target
+
+[Service]
+Type=simple
+User=sitehale
+Group=sitehale
+WorkingDirectory=/opt/sitehale
+EnvironmentFile=/etc/sitehale.env
+ExecStart=/usr/bin/npm start --silent
+Restart=on-failure
+RestartSec=5
+
+# Hardening
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+# The SQLite database (plus its -wal/-shm files) is the only thing the app
+# writes at runtime — bookings are inserted here.
+ReadWritePaths=/var/lib/sitehale
+
+[Install]
+WantedBy=multi-user.target

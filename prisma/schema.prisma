@@ -1,0 +1,54 @@
+// Prisma schema
+// ---------------------------------------------------------------------------
+// We start on SQLite for easy local development. To move to PostgreSQL later:
+//   1. Change `provider` below from "sqlite" to "postgresql"
+//   2. Set DATABASE_URL in .env to your Postgres connection string
+//   3. Run: npx prisma migrate dev
+// The models below avoid SQLite-only features so the switch stays painless.
+// ---------------------------------------------------------------------------
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+/// A bookable service / offering shown on the site.
+model Service {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  title       String
+  description String
+  icon        String   @default("✦")
+  priceLabel  String // e.g. "$90" or "Free"
+  durationMin Int // session length in minutes
+  featured    Boolean  @default(false)
+  order       Int      @default(0)
+  active      Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+/// A client testimonial / story of transformation.
+model Testimonial {
+  id        String   @id @default(cuid())
+  quote     String
+  author    String
+  published Boolean  @default(true)
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+}
+
+/// A session request submitted through the booking form.
+model Booking {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  service   String // the service the client is interested in
+  message   String?
+  status    String   @default("new") // new | confirmed | done | cancelled
+  createdAt DateTime @default(now())
+}
