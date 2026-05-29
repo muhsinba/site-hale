@@ -24,7 +24,7 @@ export default function About() {
           </p>
           {/* PERSONALIZE: her name */}
           <h2 className="text-4xl md:text-5xl">
-            Merhaba, ben <span className="italic text-purple">[İsmi]</span>
+            Merhaba, ben <span className="italic text-purple">Hale Bayramoğlu</span>
           </h2>
           <div className="mt-6 space-y-5 text-lg leading-relaxed text-plum/80">
             <p>

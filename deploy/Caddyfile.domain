@@ -1,0 +1,26 @@
+# site-hale domain block for the SHARED VM (myapp).
+#
+# The live Caddyfile on the shared VM (/etc/caddy/Caddyfile) belongs to
+# my-hello-world and already serves :80. To put site-hale on its own domain
+# with automatic HTTPS, APPEND this block to that file, then:
+#
+#   sudo systemctl reload caddy
+#
+# Caddy fetches a Let's Encrypt cert on the first request (~10s). The apex
+# (halebayramoglu.com) is canonical; www permanently redirects to it.
+#
+# Prerequisites:
+#   - DNS A records for halebayramoglu.com and www.halebayramoglu.com point
+#     at the VM's (static) IP 34.107.64.126.
+#   - Ports 80 and 443 are open (default-allow-http / -https firewall rules).
+#
+# After the domain works, close the raw port:
+#   gcloud compute firewall-rules delete allow-sitehale-3001
+
+halebayramoglu.com, www.halebayramoglu.com {
+	encode gzip
+	# Canonicalize: send www -> apex (preserves path + query).
+	@www host www.halebayramoglu.com
+	redir @www https://halebayramoglu.com{uri} permanent
+	reverse_proxy localhost:3001
+}

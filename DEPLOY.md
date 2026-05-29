@@ -7,8 +7,9 @@
 > (idempotent — `scp` it to the VM and `bash` it). A 2 GB swapfile was added so
 > `next build` doesn't OOM the shared box. When a domain is bought, move
 > site-hale behind Caddy with a hostname block (→ `localhost:3001`, auto-HTTPS)
-> and remove the `allow-sitehale-3001` firewall rule. The rest of this doc
-> describes the clean **standalone single-VM** setup.
+> and remove the `allow-sitehale-3001` firewall rule — see
+> [**Connecting the domain (shared VM)**](#connecting-the-domain-shared-vm)
+> below. The rest of this doc describes the clean **standalone single-VM** setup.
 
 ---
 
@@ -180,6 +181,51 @@ The shipped Caddyfile listens on `:80` and reverse-proxies to Next.js on
 Visit `http://VM_EXTERNAL_IP/` (the IP from the end of §1). The home page should
 load with the seeded services and testimonials, and submitting the booking form
 should save a row (verify with §"Viewing bookings" below).
+
+## Connecting the domain (shared VM)
+
+This is the as-built path: site-hale runs on `:3001` on the shared `myapp` VM,
+and the domain `halebayramoglu.com` gets its own HTTPS hostname block in the
+Caddyfile that my-hello-world already manages on `:80`.
+
+1. **Reserve a static IP** (ephemeral IPs change on stop/start and would break
+   DNS). This promotes the current IP in place — free while attached:
+
+   ```bash
+   gcloud compute addresses create sitehale-ip --addresses=34.107.64.126 \
+     --region=europe-west3
+   ```
+
+2. **DNS** — at the registrar, create two A records pointing at the IP:
+
+   | Type | Name  | Value           |
+   |------|-------|-----------------|
+   | A    | `@`   | `34.107.64.126` |
+   | A    | `www` | `34.107.64.126` |
+
+   Confirm with `nslookup halebayramoglu.com` before continuing.
+
+3. **Caddy** — append the hostname block from
+   [`deploy/Caddyfile.domain`](deploy/Caddyfile.domain) to the VM's live
+   `/etc/caddy/Caddyfile` (apex is canonical; www redirects to it; auto-HTTPS),
+   then reload:
+
+   ```bash
+   sudo systemctl reload caddy
+   ```
+
+   The first request takes ~10s while Caddy fetches a Let's Encrypt cert. The
+   booking form keeps working: Caddy forwards the `Host` header, so Next.js's
+   Server-Action origin check passes with no `allowedOrigins` config.
+
+4. **Close the raw port** once HTTPS works:
+
+   ```bash
+   gcloud compute firewall-rules delete allow-sitehale-3001
+   ```
+
+The app's `metadataBase` is already set to `https://halebayramoglu.com` in
+`src/app/layout.tsx`, so canonical/Open Graph URLs resolve correctly.
 
 ## Switching to HTTPS later
 

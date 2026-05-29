@@ -17,6 +17,8 @@ const jost = Jost({
 
 // PERSONALIZE: site title & description (shown in browser tabs and search results)
 export const metadata: Metadata = {
+  // Base URL for resolving relative metadata (Open Graph, canonical) to absolute URLs.
+  metadataBase: new URL("https://halebayramoglu.com"),
   title: "Hale Bayramoğlu — Enerji Şifası ve Bütünsel İyilik",
   description:
     "Dengenizi yeniden kurmanız, artık size hizmet etmeyeni bırakmanız ve gerçek benliğinizle yeniden bağ kurmanız için Reiki, enerji şifası ve bütünsel iyilik seansları.",
