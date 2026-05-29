@@ -6,9 +6,9 @@ const prisma = new PrismaClient();
 const services = [
   {
     slug: "reiki-energy-healing",
-    title: "Reiki Energy Healing",
+    title: "Reiki Enerji Şifası",
     description:
-      "A deeply relaxing session that clears energetic blockages and restores the natural flow of life force throughout the body.",
+      "Bedendeki enerji tıkanıklıklarını açan ve yaşam enerjisinin doğal akışını yeniden sağlayan, derinlemesine rahatlatıcı bir seans.",
     icon: "✦",
     priceLabel: "$90",
     durationMin: 60,
@@ -16,9 +16,9 @@ const services = [
   },
   {
     slug: "holistic-wellness-journey",
-    title: "Holistic Wellness Journey",
+    title: "Bütünsel İyilik Yolculuğu",
     description:
-      "An extended, whole-person session combining energy work, intuitive guidance, and grounding practices for lasting balance.",
+      "Kalıcı denge için enerji çalışması, sezgisel rehberlik ve topraklanma uygulamalarını birleştiren, kişinin tümünü kapsayan uzun bir seans.",
     icon: "☾",
     priceLabel: "$140",
     durationMin: 90,
@@ -27,9 +27,9 @@ const services = [
   },
   {
     slug: "chakra-balancing",
-    title: "Chakra Balancing",
+    title: "Çakra Dengeleme",
     description:
-      "Realign and harmonize your energy centers, releasing tension and inviting clarity, calm, and renewed vitality.",
+      "Enerji merkezlerinizi yeniden hizalayıp uyumlandırarak gerilimi bırakır; berraklık, sükûnet ve yenilenmiş bir canlılık davet eder.",
     icon: "❋",
     priceLabel: "$100",
     durationMin: 75,
@@ -37,9 +37,9 @@ const services = [
   },
   {
     slug: "distance-healing",
-    title: "Distance Healing",
+    title: "Uzaktan Şifa",
     description:
-      "Receive the gift of healing energy from the comfort of your own home, guided through a live online connection.",
+      "Şifa enerjisini kendi evinizin rahatlığında, canlı bir çevrimiçi bağlantı aracılığıyla alın.",
     icon: "✸",
     priceLabel: "$75",
     durationMin: 45,
@@ -47,9 +47,9 @@ const services = [
   },
   {
     slug: "guided-meditation",
-    title: "Guided Meditation",
+    title: "Rehberli Meditasyon",
     description:
-      "A calming, intention-led meditation to quiet the mind, soften the body, and return you to a place of stillness.",
+      "Zihni susturan, bedeni yumuşatan ve sizi dinginlik haline geri döndüren, niyet odaklı sakinleştirici bir meditasyon.",
     icon: "✿",
     priceLabel: "$60",
     durationMin: 45,
@@ -57,11 +57,11 @@ const services = [
   },
   {
     slug: "discovery-call",
-    title: "Discovery Call",
+    title: "Tanışma Görüşmesi",
     description:
-      "A complimentary conversation to explore your needs and find the right healing path — no commitment, just connection.",
+      "İhtiyaçlarınızı keşfetmek ve doğru şifa yolunu bulmak için ücretsiz bir sohbet — taahhüt yok, yalnızca bağ kurmak.",
     icon: "✦",
-    priceLabel: "Free",
+    priceLabel: "Ücretsiz",
     durationMin: 20,
     order: 6,
   },
@@ -70,20 +70,20 @@ const services = [
 const testimonials = [
   {
     quote:
-      "I left my session feeling lighter than I have in years. The space she holds is truly sacred — I felt completely safe to let go.",
-    author: "Maya R.",
+      "Seansımdan yıllardır olmadığım kadar hafiflemiş ayrıldım. Yarattığı alan gerçekten kutsal — bırakmak için kendimi tamamen güvende hissettim.",
+    author: "Elif K.",
     order: 1,
   },
   {
     quote:
-      "Her intuition is remarkable. She sensed exactly what I needed and guided me with such warmth and care. I've come back ever since.",
-    author: "James T.",
+      "Sezgileri olağanüstü. Tam olarak neye ihtiyacım olduğunu hissetti ve bana büyük bir sıcaklık ve özenle rehberlik etti. O günden beri düzenli olarak geliyorum.",
+    author: "Mehmet T.",
     order: 2,
   },
   {
     quote:
-      "The most peaceful, grounding experience. I think of our sessions as a reset for my whole being — body, mind, and soul.",
-    author: "Aisha L.",
+      "Yaşadığım en huzurlu, en topraklayıcı deneyim. Seanslarımızı tüm varlığım için bir sıfırlama olarak görüyorum — beden, zihin ve ruh.",
+    author: "Ayşe L.",
     order: 3,
   },
 ];

@@ -2,7 +2,7 @@ export default function Footer() {
   // PERSONALIZE: contact details and social links
   const email = "hello@serenehealing.com";
   const phone = "+1 (000) 000-0000";
-  const address = "123 Tranquil Lane, Your City";
+  const address = "Huzur Sokağı No:123, Şehriniz";
   const socials = [
     { label: "Instagram", href: "#" },
     { label: "Facebook", href: "#" },
@@ -17,13 +17,13 @@ export default function Footer() {
             <span className="font-serif text-2xl text-cream">Hale Bayramoğlu</span>
           </a>
           <p className="mt-4 max-w-xs leading-relaxed text-cream/70">
-            Restoring balance to body, mind &amp; spirit — one gentle session at
-            a time.
+            Beden, zihin ve ruha dengeyi geri kazandırıyorum — her seferinde
+            nazik bir seansla.
           </p>
         </div>
 
         <div className="reveal">
-          <h4 className="mb-4 text-lg text-cream">Get in touch</h4>
+          <h4 className="mb-4 text-lg text-cream">İletişime geçin</h4>
           <ul className="space-y-3 text-cream/75">
             <li>
               <a href={`mailto:${email}`} className="hover:text-gold-light transition-colors">
@@ -43,7 +43,7 @@ export default function Footer() {
         </div>
 
         <div className="reveal">
-          <h4 className="mb-4 text-lg text-cream">Follow along</h4>
+          <h4 className="mb-4 text-lg text-cream">Takip edin</h4>
           <ul className="space-y-3 text-cream/75">
             {socials.map((s) => (
               <li key={s.label}>
@@ -64,7 +64,7 @@ export default function Footer() {
       <div className="border-t border-cream/10">
         <div className="mx-auto max-w-6xl px-6 py-6 text-center text-sm text-cream/50">
           {/* PERSONALIZE: business name */}
-          © {new Date().getFullYear()} Hale Bayramoğlu. Made with care.
+          © {new Date().getFullYear()} Hale Bayramoğlu. Özenle hazırlandı.
         </div>
       </div>
     </footer>

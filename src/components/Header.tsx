@@ -3,10 +3,10 @@
 import { useEffect, useState } from "react";
 
 const links = [
-  { href: "#about", label: "About" },
-  { href: "#services", label: "Services" },
-  { href: "#testimonials", label: "Stories" },
-  { href: "#contact", label: "Contact" },
+  { href: "#about", label: "Hakkımda" },
+  { href: "#services", label: "Hizmetler" },
+  { href: "#testimonials", label: "Hikayeler" },
+  { href: "#contact", label: "İletişim" },
 ];
 
 export default function Header() {
@@ -65,7 +65,7 @@ export default function Header() {
                   : "bg-gold text-plum hover:bg-gold-light"
               }`}
             >
-              Book a Session
+              Randevu Al
             </a>
           </li>
         </ul>
@@ -73,7 +73,7 @@ export default function Header() {
         {/* Mobile toggle */}
         <button
           className="md:hidden flex flex-col gap-1.5 p-2"
-          aria-label="Toggle menu"
+          aria-label="Menüyü aç/kapat"
           aria-expanded={open}
           onClick={() => setOpen((o) => !o)}
         >
@@ -101,7 +101,7 @@ export default function Header() {
       {/* Mobile menu */}
       {open && (
         <ul className="md:hidden mt-3 mx-4 rounded-2xl bg-cream shadow-lg p-4 flex flex-col gap-1">
-          {[...links, { href: "#book", label: "Book a Session" }].map((l) => (
+          {[...links, { href: "#book", label: "Randevu Al" }].map((l) => (
             <li key={l.href}>
               <a
                 href={l.href}

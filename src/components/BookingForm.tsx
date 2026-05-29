@@ -14,7 +14,7 @@ function SubmitButton() {
       disabled={pending}
       className="rounded-full bg-gold px-8 py-3.5 font-medium text-plum shadow-lg transition-all hover:scale-[1.02] disabled:cursor-not-allowed disabled:opacity-60"
     >
-      {pending ? "Sending…" : "Send Request"}
+      {pending ? "Gönderiliyor…" : "Talep Gönder"}
     </button>
   );
 }
@@ -28,7 +28,7 @@ export default function BookingForm({ services }: { services: string[] }) {
         <div className="mb-4 text-4xl">🌿</div>
         <h3 className="text-2xl text-plum">{state.message}</h3>
         <p className="mt-3 text-plum/70">
-          Keep an eye on your inbox — a reply is on its way.
+          Gelen kutunuzu takip edin — yanıt yolda.
         </p>
       </div>
     );
@@ -50,43 +50,43 @@ export default function BookingForm({ services }: { services: string[] }) {
       />
 
       <div className="grid gap-5 sm:grid-cols-2">
-        <Field label="Your name">
+        <Field label="Adınız">
           <input
             type="text"
             name="name"
             required
-            placeholder="Jane Doe"
+            placeholder="Ayşe Yılmaz"
             className="input"
           />
         </Field>
-        <Field label="Email">
+        <Field label="E-posta">
           <input
             type="email"
             name="email"
             required
-            placeholder="jane@example.com"
+            placeholder="ayse@ornek.com"
             className="input"
           />
         </Field>
       </div>
 
       <div className="mt-5">
-        <Field label="Service you're interested in">
+        <Field label="İlgilendiğiniz hizmet">
           <select name="service" className="input" defaultValue={services[0]}>
             {services.map((s) => (
               <option key={s}>{s}</option>
             ))}
-            <option>Not sure yet</option>
+            <option>Henüz emin değilim</option>
           </select>
         </Field>
       </div>
 
       <div className="mt-5">
-        <Field label="What are you seeking? (optional)">
+        <Field label="Ne arıyorsunuz? (isteğe bağlı)">
           <textarea
             name="message"
             rows={4}
-            placeholder="A few words about what brings you here…"
+            placeholder="Sizi buraya getiren şey hakkında birkaç kelime…"
             className="input resize-none"
           />
         </Field>

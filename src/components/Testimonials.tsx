@@ -12,9 +12,9 @@ export default function Testimonials({
       <div className="mx-auto max-w-6xl px-6">
         <div className="reveal mx-auto mb-16 max-w-2xl text-center">
           <p className="mb-3 text-sm uppercase tracking-[0.2em] text-gold">
-            Stories of Transformation
+            Dönüşüm Hikayeleri
           </p>
-          <h2 className="text-4xl md:text-5xl">What clients are saying</h2>
+          <h2 className="text-4xl md:text-5xl">Danışanlar ne diyor</h2>
         </div>
 
         <div className="grid gap-8 md:grid-cols-3">

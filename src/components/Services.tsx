@@ -2,10 +2,10 @@ import type { Service } from "@prisma/client";
 
 function formatDuration(min: number) {
   return min >= 60 && min % 60 === 0
-    ? `${min / 60} hr`
+    ? `${min / 60} saat`
     : min > 60
-      ? `${Math.floor(min / 60)} hr ${min % 60} min`
-      : `${min} min`;
+      ? `${Math.floor(min / 60)} saat ${min % 60} dk`
+      : `${min} dk`;
 }
 
 export default function Services({ services }: { services: Service[] }) {
@@ -14,16 +14,16 @@ export default function Services({ services }: { services: Service[] }) {
       <div className="mx-auto max-w-6xl px-6">
         <div className="reveal mx-auto mb-16 max-w-2xl text-center">
           <p className="mb-3 text-sm uppercase tracking-[0.2em] text-gold">
-            What I Offer
+            Sunduklarım
           </p>
-          <h2 className="text-4xl md:text-5xl">Services &amp; Pricing</h2>
+          <h2 className="text-4xl md:text-5xl">Hizmetler ve Ücretler</h2>
           <p className="mt-5 text-lg leading-relaxed text-plum/75">
-            Each offering is a personalized path toward restoration. Not sure
-            which is right for you?{" "}
+            Her hizmet, yenilenmeye giden kişiye özel bir yoldur. Hangisinin
+            size uygun olduğundan emin değil misiniz?{" "}
             <a href="#contact" className="text-purple underline-offset-4 hover:underline">
-              Reach out
+              Bize ulaşın
             </a>{" "}
-            and we&apos;ll find it together.
+            birlikte bulalım.
           </p>
         </div>
 
@@ -39,7 +39,7 @@ export default function Services({ services }: { services: Service[] }) {
             >
               {s.featured && (
                 <span className="absolute -top-3 left-8 rounded-full bg-gold px-4 py-1 text-xs font-medium uppercase tracking-wide text-plum">
-                  Most Loved
+                  En Sevilen
                 </span>
               )}
               <div
@@ -75,7 +75,7 @@ export default function Services({ services }: { services: Service[] }) {
                     : "text-purple hover:text-plum"
                 }`}
               >
-                Book this →
+                Randevu al →
               </a>
             </article>
           ))}

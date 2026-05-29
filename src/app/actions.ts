@@ -20,14 +20,14 @@ export async function createBooking(
 
   // Honeypot field — bots fill it, humans never see it.
   if (String(formData.get("company") ?? "").length > 0) {
-    return { status: "success", message: "Thank you — your request has been received." };
+    return { status: "success", message: "Teşekkürler — talebiniz alındı." };
   }
 
   if (name.length < 2) {
-    return { status: "error", message: "Please enter your name." };
+    return { status: "error", message: "Lütfen adınızı girin." };
   }
   if (!EMAIL_RE.test(email)) {
-    return { status: "error", message: "Please enter a valid email address." };
+    return { status: "error", message: "Lütfen geçerli bir e-posta adresi girin." };
   }
 
   try {
@@ -43,12 +43,12 @@ export async function createBooking(
     console.error("Failed to save booking:", err);
     return {
       status: "error",
-      message: "Something went wrong saving your request. Please try again.",
+      message: "Talebiniz kaydedilirken bir sorun oluştu. Lütfen tekrar deneyin.",
     };
   }
 
   return {
     status: "success",
-    message: "Thank you — your request has been received. I'll be in touch soon. 🌿",
+    message: "Teşekkürler — talebiniz alındı. En kısa sürede sizinle iletişime geçeceğim. 🌿",
   };
 }

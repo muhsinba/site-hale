@@ -9,7 +9,7 @@ export default function About() {
           {/* PERSONALIZE: portrait lives at /public/haleprofile.jpg */}
           <Image
             src="/haleprofile.jpg"
-            alt="Portrait of Hale Bayramoğlu"
+            alt="Hale Bayramoğlu portresi"
             width={560}
             height={700}
             priority
@@ -20,30 +20,32 @@ export default function About() {
         {/* Text */}
         <div className="reveal">
           <p className="mb-3 text-sm uppercase tracking-[0.2em] text-gold">
-            My Story
+            Hikayem
           </p>
           {/* PERSONALIZE: her name */}
           <h2 className="text-4xl md:text-5xl">
-            Hello, I&apos;m <span className="italic text-purple">[Her Name]</span>
+            Merhaba, ben <span className="italic text-purple">[İsmi]</span>
           </h2>
           <div className="mt-6 space-y-5 text-lg leading-relaxed text-plum/80">
             <p>
-              For over a decade I&apos;ve walked alongside people seeking healing
-              — guiding them gently through energy work, Reiki, and holistic
-              practices that honor the body, mind, and spirit as one.
+              On yılı aşkın süredir şifa arayan insanların yanında yürüyorum —
+              onlara beden, zihin ve ruhu bir bütün olarak onurlandıran enerji
+              çalışmaları, Reiki ve bütünsel uygulamalarla nazikçe rehberlik
+              ediyorum.
             </p>
             <p>
-              My approach is rooted in deep presence and compassion. Each session
-              is a sacred space, held just for you, where you are free to soften,
-              release, and remember the wholeness that has always been within you.
+              Yaklaşımım derin bir farkındalık ve şefkate dayanır. Her seans,
+              yalnızca sizin için tutulan kutsal bir alandır; burada yumuşamakta,
+              bırakmakta ve içinizde hep var olan bütünlüğü yeniden hatırlamakta
+              özgürsünüz.
             </p>
           </div>
           <ul className="mt-8 space-y-3">
             {/* PERSONALIZE: real credentials / certifications */}
             {[
-              "Certified Reiki Master & Energy Practitioner",
-              "Trained in Holistic & Alternative Wellness",
-              "10+ years guiding clients toward balance",
+              "Sertifikalı Reiki Ustası ve Enerji Uygulayıcısı",
+              "Bütünsel ve Alternatif İyilik Eğitimi Almış",
+              "10+ yıldır danışanlara dengeye giden yolda rehberlik ediyor",
             ].map((c) => (
               <li key={c} className="flex items-center gap-3 text-plum/80">
                 <span className="text-gold">✦</span>

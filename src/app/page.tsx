@@ -42,12 +42,12 @@ export default async function Home() {
           <div className="mx-auto max-w-6xl px-6">
             <div className="reveal mx-auto mb-12 max-w-2xl text-center">
               <p className="mb-3 text-sm uppercase tracking-[0.2em] text-gold">
-                Begin Your Journey
+                Yolculuğunuza Başlayın
               </p>
-              <h2 className="text-4xl md:text-5xl">Request a session</h2>
+              <h2 className="text-4xl md:text-5xl">Seans talep edin</h2>
               <p className="mt-5 text-lg leading-relaxed text-plum/75">
-                Share a little about yourself and what you&apos;re seeking.
-                I&apos;ll personally reach out to confirm your appointment.
+                Kendinizden ve ne aradığınızdan kısaca bahsedin. Randevunuzu
+                onaylamak için sizinle bizzat iletişime geçeceğim.
               </p>
             </div>
             <BookingForm services={serviceNames} />
