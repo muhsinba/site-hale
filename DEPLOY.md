@@ -1,5 +1,19 @@
 # Deploying to a single Google Compute Engine VM (Frankfurt)
 
+> **Live deployment (as-built):** site-hale runs **alongside my-hello-world on
+> the same VM** (`myapp`, `europe-west3-a`), on **port 3001**, reachable at
+> **http://34.107.64.126:3001/**. my-hello-world keeps `:80` (Caddy) untouched.
+> This shared-VM setup was provisioned with [`deploy/provision-shared-vm.sh`](deploy/provision-shared-vm.sh)
+> (idempotent — `scp` it to the VM and `bash` it). A 2 GB swapfile was added so
+> `next build` doesn't OOM the shared box. When a domain is bought, move
+> site-hale behind Caddy with a hostname block (→ `localhost:3001`, auto-HTTPS)
+> and remove the `allow-sitehale-3001` firewall rule. The rest of this doc
+> describes the clean **standalone single-VM** setup.
+
+---
+
+
+
 Same shape as the my-hello-world deploy: one `e2-small` VM in `europe-west3-a`
 (GCP's Frankfurt region), Debian 12, Node 20, Caddy fronting Next.js on port
 3000. Served over **HTTP only** at first — turning on HTTPS later is one config
