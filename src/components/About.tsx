@@ -28,24 +28,34 @@ export default function About() {
           </h2>
           <div className="mt-6 space-y-5 text-lg leading-relaxed text-plum/80">
             <p>
-              On yılı aşkın süredir şifa arayan insanların yanında yürüyorum —
-              onlara beden, zihin ve ruhu bir bütün olarak onurlandıran enerji
-              çalışmaları, Reiki ve bütünsel uygulamalarla nazikçe rehberlik
-              ediyorum.
+              21 yılı aşkın süredir, yaşamında denge, huzur ve içsel dönüşüm
+              arayan insanların yolculuğuna eşlik ediyorum. Çalışmalarımda; beden,
+              zihin ve ruhun ayrılmaz bütünlüğünü esas alan enerji terapileri,
+              frekans çalışmaları ve bütünsel şifa yaklaşımlarıyla danışanlarıma
+              nazik, güvenli ve derinleştirici bir alan sunuyorum.
             </p>
             <p>
-              Yaklaşımım derin bir farkındalık ve şefkate dayanır. Her seans,
-              yalnızca sizin için tutulan kutsal bir alandır; burada yumuşamakta,
-              bırakmakta ve içinizde hep var olan bütünlüğü yeniden hatırlamakta
-              özgürsünüz.
+              Her bireyin özünde taşıdığı denge, bilgelik ve iyileşme
+              potansiyeline inanıyorum. Bu nedenle her seansı; yalnızca size özel
+              olarak tutulan, yargısız, şefkatli ve farkındalık odaklı bir deneyim
+              olarak tasarlıyorum. Bu alanda; bırakmaya, yumuşamaya, dönüşmeye ve
+              özünüzde her zaman var olan bütünlüğü yeniden hatırlamaya
+              davetlisiniz.
+            </p>
+            <p>
+              Yaklaşımım; sezgisel rehberlik, bilinç farkındalığı ve enerjetik
+              dengeleme çalışmalarını bir araya getirerek hem duygusal hem
+              zihinsel hem de ruhsal düzeyde destek sunmayı amaçlar. Amacım,
+              danışanların kendi iç kaynaklarıyla yeniden bağlantı kurmalarına ve
+              yaşamlarında daha yüksek bir uyum hissi oluşturmalarına katkı
+              sağlamaktır.
             </p>
           </div>
           <ul className="mt-8 space-y-3">
-            {/* PERSONALIZE: real credentials / certifications */}
             {[
-              "Sertifikalı Reiki Ustası ve Enerji Uygulayıcısı",
-              "Bütünsel ve Alternatif İyilik Eğitimi Almış",
-              "10+ yıldır danışanlara dengeye giden yolda rehberlik ediyor",
+              "Sertifikalı Holistik Şifa Eğitimcisi",
+              "SCIO Quantum Biofeedback Frekans Seansları Uygulayıcısı",
+              "21+ yıllık bütünsel şifa ve dönüşüm deneyimi",
             ].map((c) => (
               <li key={c} className="flex items-center gap-3 text-plum/80">
                 <span className="text-gold">✦</span>
@@ -53,6 +63,23 @@ export default function About() {
               </li>
             ))}
           </ul>
+          <div className="mt-10">
+            <h3 className="text-2xl text-purple">Uzmanlık ve Çalışma Alanları</h3>
+            <ul className="mt-4 space-y-3">
+              {[
+                "Bach Çiçekleri Terapisi",
+                "Bireysel Farkındalık ve Dönüşüm Seansları",
+                "Enerji Dengeleme ve Frekans Çalışmaları",
+                "“Ciddiyetten Eğlenceye” Atölye Programı",
+                "Bilinç, farkındalık ve içsel dönüşüm odaklı rehberlik çalışmaları",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-3 text-plum/80">
+                  <span className="mt-1 text-gold">•</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </section>
