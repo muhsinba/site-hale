@@ -26,7 +26,7 @@ export default function Hero() {
 
       <div className="relative mx-auto max-w-3xl px-6 text-center">
         <p className="reveal mb-6 text-sm uppercase tracking-[0.25em] text-gold-light">
-          Enerji Şifası · Reiki · Bütünsel İyilik
+          Enerji Şifası · Bütünsel İyilik
         </p>
         {/* PERSONALIZE: main headline */}
         <h1 className="reveal text-5xl leading-tight sm:text-6xl md:text-7xl">
