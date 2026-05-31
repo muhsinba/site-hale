@@ -105,15 +105,22 @@ async function main() {
     where: { slug: { notIn: services.map((s) => s.slug) } },
   });
 
-  // Testimonials have no natural unique key; reset and re-create.
-  await prisma.testimonial.deleteMany();
-  for (const testimonial of testimonials) {
-    await prisma.testimonial.create({ data: testimonial });
+  // Testimonials are managed through the /admin panel, so we only seed the
+  // starter set when the table is empty. Re-running the seed (e.g. on deploy)
+  // must never wipe testimonials Hale has added or edited herself.
+  const existingTestimonials = await prisma.testimonial.count();
+  if (existingTestimonials === 0) {
+    for (const testimonial of testimonials) {
+      await prisma.testimonial.create({ data: testimonial });
+    }
+    console.log(`Seeded ${testimonials.length} starter testimonials.`);
+  } else {
+    console.log(
+      `Skipped testimonials — ${existingTestimonials} already present (managed via /admin).`,
+    );
   }
 
-  console.log(
-    `Seeded ${services.length} services and ${testimonials.length} testimonials.`,
-  );
+  console.log(`Seeded ${services.length} services.`);
 }
 
 main()

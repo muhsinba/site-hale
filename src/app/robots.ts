@@ -8,7 +8,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: "/api/", // keep crawlers off the chat endpoint
+      disallow: ["/api/", "/admin"], // keep crawlers off the chat endpoint & admin panel
     },
     sitemap: `${BASE_URL}/sitemap.xml`,
   };

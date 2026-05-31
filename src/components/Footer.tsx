@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   // PERSONALIZE: contact details and social links
   const email = "bayramoglusafiyehale@gmail.com";
@@ -100,9 +102,12 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-cream/10">
-        <div className="mx-auto max-w-6xl px-6 py-6 text-center text-sm text-cream/50">
+        <div className="mx-auto flex max-w-6xl flex-col items-center gap-2 px-6 py-6 text-center text-sm text-cream/50 sm:flex-row sm:justify-between sm:text-left">
           {/* PERSONALIZE: business name */}
-          © {new Date().getFullYear()} Hale Bayramoğlu. Özenle hazırlandı.
+          <span>© {new Date().getFullYear()} Hale Bayramoğlu. Özenle hazırlandı.</span>
+          <Link href="/admin" className="text-cream/40 transition-colors hover:text-gold-light">
+            Yönetim
+          </Link>
         </div>
       </div>
     </footer>
