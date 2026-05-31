@@ -71,7 +71,7 @@ export default function BookingForm({ services }: { services: string[] }) {
       </div>
 
       <div className="mt-5">
-        <Field label="İlgilendiğiniz hizmet">
+        <Field label="İlgilendiğiniz çalışma">
           <select name="service" className="input" defaultValue={services[0]}>
             {services.map((s) => (
               <option key={s}>{s}</option>

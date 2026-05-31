@@ -5,12 +5,12 @@ const prisma = new PrismaClient();
 // PERSONALIZE: edit the services and testimonials below, then run `npm run db:seed`.
 const services = [
   {
-    slug: "reiki-energy-healing",
-    title: "Reiki Enerji Şifası",
+    slug: "bach-flowers",
+    title: "Bach Çiçekleri Nedir?",
     description:
-      "Bedendeki enerji tıkanıklıklarını açan ve yaşam enerjisinin doğal akışını yeniden sağlayan, derinlemesine rahatlatıcı bir seans.",
-    icon: "✦",
-    priceLabel: "$90",
+      "Bach Çiçekleri (Bach Flower Remedies), İngiliz doktor, bakteriyolog ve homeopat Dr. Edward Bach tarafından 1930’lu yıllarda geliştirilmiş doğal bir destek yöntemidir. Dr. Bach, uzun yıllar boyunca yaptığı gözlemler sonucunda insanların fiziksel rahatsızlıklarının çoğunun altında çözülmemiş duygusal çatışmaların, stresin ve içsel dengesizliklerin bulunduğunu savunmuştur. Ona göre gerçek iyilik hali, beden, zihin ve ruh arasındaki uyumun sağlanmasıyla mümkündür.",
+    icon: "❀",
+    priceLabel: "",
     durationMin: 60,
     order: 1,
   },
@@ -98,6 +98,12 @@ async function main() {
       create: service,
     });
   }
+
+  // Keep the table in sync: remove services no longer present in the list above.
+  // (Bookings store the service as a plain string, not a relation, so this is safe.)
+  await prisma.service.deleteMany({
+    where: { slug: { notIn: services.map((s) => s.slug) } },
+  });
 
   // Testimonials have no natural unique key; reset and re-create.
   await prisma.testimonial.deleteMany();

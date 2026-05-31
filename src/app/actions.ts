@@ -35,7 +35,7 @@ async function sendBookingNotification(booking: {
   const lines = [
     `İsim: ${name}`,
     `E-posta: ${email}`,
-    `Hizmet: ${service}`,
+    `Çalışma: ${service}`,
     `Mesaj: ${message ?? "(belirtilmedi)"}`,
   ];
 

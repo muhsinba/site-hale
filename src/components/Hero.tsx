@@ -50,7 +50,7 @@ export default function Hero() {
             href="#services"
             className="rounded-full border border-cream/40 px-8 py-3.5 text-cream transition-colors hover:bg-cream/10"
           >
-            Hizmetleri Keşfet
+            Çalışmaları Keşfet
           </a>
         </div>
       </div>
