@@ -30,15 +30,15 @@ export default function BachCicekleriPage() {
 
       <main className="bg-cream">
         {/* Hero */}
-        <section className="mx-auto max-w-3xl px-6 pt-16 pb-10 text-center md:pt-24">
+        <section className="mx-auto max-w-3xl px-6 pt-10 pb-4 text-center md:pt-14">
           <p className="mb-3 text-sm uppercase tracking-[0.2em] text-gold">
             Bütünsel Şifa
           </p>
-          <h1 className="text-4xl md:text-6xl">Bach Çiçekleri Nedir?</h1>
+          <h1 className="text-4xl md:text-6xl">Bach Çiçekleri ve Felsefesi</h1>
         </section>
 
         {/* Intro (real content) */}
-        <section className="mx-auto max-w-3xl px-6 pb-12">
+        <section className="mx-auto max-w-3xl px-6 pb-6">
           <p className="text-lg leading-relaxed text-plum/80">
             Bach Çiçekleri (Bach Flower Remedies), İngiliz doktor, bakteriyolog
             ve homeopat Dr. Edward Bach tarafından 1930’lu yıllarda geliştirilmiş
@@ -48,108 +48,207 @@ export default function BachCicekleriPage() {
             dengesizliklerin bulunduğunu savunmuştur. Ona göre gerçek iyilik
             hali, beden, zihin ve ruh arasındaki uyumun sağlanmasıyla mümkündür.
           </p>
+          <div className="mt-4 space-y-3 text-lg leading-relaxed text-plum/80">
+            <p>
+              🌿 Dr. Edward Bach’a göre hastalık yalnızca fiziksel bir durum
+              değildir; kişinin iç dünyasında yaşadığı uyumsuzlukların ve
+              duygusal çatışmaların bir yansımasıdır.
+            </p>
+            <p className="border-l-2 border-gold pl-4 italic text-purple">
+              ✨ “Hastalık, ruhun sesini duyurmaya çalışmasıdır.”
+            </p>
+            <p>
+              🌿 Bach, gerçek iyileşmenin yalnızca belirtilerin ortadan
+              kalkmasıyla değil, kişinin kendi özüyle ve yaşam amacıyla uyum
+              içinde olmasıyla mümkün olduğuna inanıyordu.
+            </p>
+            <p className="border-l-2 border-gold pl-4 italic text-purple">
+              ✨ “Gerçek iyileşme, kişinin kendi içsel doğasıyla uyumudur.”
+            </p>
+            <p>
+              🌿 Sevgi, anlayış, şefkat ve özgür irade Bach felsefesinin temel
+              taşlarıdır. Her bireyin kendi içsel bilgeliğine ulaşma ve yaşam
+              yolunu özgürce seçme hakkına sahip olduğunu savunmuştur.
+            </p>
+            <p>
+              🌿 Bach’a göre beden, zihin ve ruh birbirinden ayrı değil; bir
+              bütünün parçalarıdır. Bu üçlü, doğal olarak denge ve uyum arayışı
+              içindedir.
+            </p>
+            <p>
+              🌿 Duygusal dengesizlikler giderildiğinde, kişinin yaşam enerjisi
+              daha özgür akar ve içsel uyum yeniden sağlanabilir.
+            </p>
+            <p className="font-medium text-plum">
+              🌸 Beden, zihin ve ruh uyum içinde olduğunda, kişi kendi özündeki
+              dengeyi ve huzuru yeniden hatırlar. ✨
+            </p>
+          </div>
         </section>
 
-        {/* ===================================================================
-            TEXT SECTION TEMPLATE — duplicate this block for each new topic.
-            Replace the heading and paragraph(s) with your own content.
-            =================================================================== */}
-        <section className="mx-auto max-w-3xl px-6 py-8">
-          <h2 className="text-3xl text-plum">Bach Çiçekleri Nasıl Etki Eder?</h2>
+        <section className="mx-auto max-w-3xl px-6 py-5">
+          <h2 className="text-3xl text-plum">Bach Çiçekleri Nedir?</h2>
           <p className="mt-4 text-lg leading-relaxed text-plum/80">
-            Bach Çiçekleri, kişinin yaşadığı olumsuz duygu durumlarını
-            dönüştürerek içsel dengeyi ve duygusal uyumu desteklemeyi amaçlar.
-            Dr. Edward Bach’a göre her olumsuz duygunun karşısında kişinin doğal
-            yapısında bulunan olumlu bir potansiyel vardır. Bach Çiçek Özleri,
-            bu olumlu niteliklerin yeniden ortaya çıkmasına yardımcı olarak
-            bireyin duygusal dengesini güçlendirir.
+            Bach Çiçekleri, 38 farklı çiçek özünden oluşan doğal bir duygusal
+            destek sistemidir.
           </p>
-          <p className="mt-4 text-lg leading-relaxed text-plum/80">
-            Örneğin korku duygusu cesarete, kararsızlık içsel güvene, umutsuzluk
-            ise umut ve yaşam enerjisine dönüşme potansiyeli taşır. Bach
-            Çiçekleri, bu dönüşüm sürecini nazik ve doğal bir şekilde
-            desteklemeyi hedefler.
+          <ul className="mt-6 space-y-3 text-lg leading-relaxed text-plum/80">
+            {[
+              "Kişinin duygusal dengesini yeniden kurmasına yardımcı olur.",
+              "Her çiçek özü, belirli bir duygu durumu ile ilişkilidir.",
+              "Sadece belirtilere değil, kişinin iç dünyasına ve duygusal ihtiyaçlarına odaklanır.",
+              "Stres, korku, endişe, kararsızlık, özgüven eksikliği ve duygusal yüklerin dengelenmesinde destek sağlar.",
+              "Kullanımı kolay, güvenli ve nazik bir yöntemdir.",
+              "Her yaştan birey için uygun bir destek yaklaşımı sunar.",
+            ].map((item) => (
+              <li key={item} className="flex gap-3">
+                <span aria-hidden>🌿</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-6 text-lg leading-relaxed text-plum/80">
+            Duygularınız dengelendiğinde, yaşam enerjiniz daha özgür akmaya
+            başlar. 🌸
+          </p>
+          <p className="mt-2 text-lg font-medium leading-relaxed text-purple">
+            Bach Çiçekleri ile duygusal dengeye ve içsel huzura bir adım atın. ✨
           </p>
         </section>
 
         {/* Bach flowers reference table */}
-        <section className="mx-auto max-w-4xl px-6 py-8">
-          <h2 className="text-3xl text-plum">Bach Çiçekleri ve Anlamları</h2>
-          <div className="mt-6 overflow-x-auto rounded-2xl border border-plum/10">
-            <table className="w-full border-collapse text-left text-sm">
-              <thead>
-                <tr className="bg-plum text-cream">
-                  <th className="px-4 py-3 font-medium">Çiçek</th>
-                  <th className="px-4 py-3 font-medium">Kullanım Alanı ve Etkisi</th>
-                </tr>
-              </thead>
-              <tbody>
-                {(
-                  [
-                    ["Agrimony (Kaşık Otu)", "Çeşitli zihinsel sıkıntıları yatıştırır ve içsel huzur hissi uyandırır."],
-                    ["Aspen (Tirek Kavak)", "Sebepsiz korkuları ve açıklanamayan huzursuzluğu yumuşatır, güven ve sükûnet kazandırır."],
-                    ["Cerato", "Sürekli onay arama ihtiyacını dengeler ve kişinin kendi iç sesine güvenmesini destekler."],
-                    ["Cherry Plum (Erik Ağacı)", "Kontrolünü ya da aklını kaybetme korkusunu yatıştırır ve iç huzuru güçlendirir."],
-                    ["Chestnut Bud (Kestane Tomurcuğu)", "Aynı hataları tekrarlama eğilimini kırar ve deneyimlerden ders çıkarmayı kolaylaştırır."],
-                    ["Chicory (Hindiba)", "Sahiplenici ve karşılık bekleyen tutumu yumuşatır, koşulsuz sevgiyi destekler."],
-                    ["Olive (Zeytin Ağacı)", "Tükenmişliği ve enerji yetersizliğini giderir, canlılığı ve gücü yeniden kazandırır."],
-                    ["Pine (Çam)", "Suçluluk duygusunu ve kendini ayıplamayı hafifletir, kendini bağışlamayı destekler."],
-                    ["Star of Bethlehem", "Şok ve travmanın etkilerini yatıştırır, teselli ve denge hissi uyandırır."],
-                    ["Sweet Chestnut (Kestane)", "Derin zihinsel ızdırabı yumuşatır ve içsel ferahlama ile umut kazandırır."],
-                    ["White Chestnut (Ak Kestane)", "Zihni meşgul eden istenmeyen düşünceleri sakinleştirir ve zihinsel berraklık sağlar."],
-                    ["Wild Oat (Yaban Otu)", "Belirsizliği ve kararsızlığı azaltır, yaşamda yön bulmayı kolaylaştırır."],
-                    ["Wild Rose (Yaban Gülü)", "İlgisizlik ve cansızlık halini dönüştürür, yaşama dair ilgi ve canlılık uyandırır."],
-                    ["Willow (Söğüt Ağacı)", "Gücenme ve içerleme duygularını çözer, affediciliği ve iç huzuru destekler."],
-                    ["Holly (Çobanpüskülü)", "Öfke, kıskançlık ve kuşku gibi duyguları yatıştırır, sevgi ve hoşgörü uyandırır."],
-                    ["Gorse (Karaçalı)", "Umutsuzluk ve karamsarlığı dağıtır, içte yeniden umut uyandırır."],
-                    ["Heather (Funda)", "Aşırı kendine odaklanmayı dengeler, başkalarını dinlemeyi ve iç dengeyi güçlendirir."],
-                    ["Gentian (Yılanotu)", "Engeller karşısında oluşan güvensizliği giderir, inanç ve kararlılığı destekler."],
-                    ["Elm (Karaağaç)", "Sorumlulukların altında ezilme hissini hafifletir, güç ve özgüven kazandırır."],
-                    ["Crab Apple (Yaban Elması)", "Kendini “kirli” ya da yetersiz hissetme duygusunu arındırır, öz kabul ve ferahlık uyandırır."],
-                    ["Clematis (Akasma)", "Dağınık dikkati toplar ve kişiyi anın gerçekliğine, yaşama bağlar."],
-                    ["Cherry Plum (Kiraz Eriği)", "Kontrolü kaybetme korkusunu ve aşırı gerginliği yatıştırır, sakinlik ve iç denge kazandırır."],
-                    ["Willow (Söğüt)", "Kendine acıma ve hoşnutsuzluğu dönüştürür, sorumluluk alma ve şükran duygusunu destekler."],
-                    ["Beech (Kayın)", "Aşırı eleştirel ve tahammülsüz tutumu yumuşatır, hoşgörü ve anlayış uyandırır."],
-                    ["Agrimony (Kasıkotu)", "Neşeli bir maskenin ardına gizlenen iç sıkıntıyı açığa çıkarır ve gerçek iç huzuru destekler."],
-                    ["Honeysuckle (Hanımeli)", "Geçmişe takılı kalmayı çözer ve kişinin şimdiki ana dönmesini destekler."],
-                    ["Hornbeam (Gürgen)", "Zihinsel yorgunluğu ve isteksizliği giderir, tazelik ve motivasyon kazandırır."],
-                    ["Sweet Chestnut (Tatlı Kestane)", "Dayanma sınırındaki derin acıyı yumuşatır ve içte umut ile ferahlama uyandırır."],
-                    ["Impatiens (Sabırotu)", "Sabırsızlığı ve aceleciliği yatıştırır, sabır ve akışta kalma hissi kazandırır."],
-                    ["Vervain (Mine Çiçeği)", "Aşırı hevesi ve gerginliği dengeler, sakinlik ve esneklik kazandırır."],
-                    ["Larch (Karaçam)", "Yetersizlik hissini giderir ve özgüveni güçlendirir."],
-                    ["Centaury (Kantaron)", "Hayır demekte zorlanmayı dönüştürür, kişinin kendi sınırlarını korumasını destekler."],
-                    ["Mimulus", "Bilinen korkuları ve çekingenliği yatıştırır, cesaret ve sükûnet kazandırır."],
-                    ["Walnut (Ceviz)", "Değişim ve yeni başlangıçlarda kişiyi dış etkilerden korur, uyum sağlamayı kolaylaştırır."],
-                    ["Mustard (Hardal)", "Nedeni belirsiz hüzün ve karamsarlığı dağıtır, içte aydınlık ve neşe uyandırır."],
-                    ["Water Violet (Su Menekşesi)", "Mesafeli ve yalnızlığa eğilimli tutumu yumuşatır, sıcaklık ve paylaşımı destekler."],
-                    ["Red Chestnut (Kızıl Kestane)", "Sevdikleri için duyulan aşırı kaygıyı yatıştırır, güven ve iç sükûnet kazandırır."],
-                    ["White Chestnut (Ak Kestane)", "Sürekli dönüp duran rahatsız edici düşünceleri sakinleştirir ve zihinsel dinginlik sağlar."],
-                    ["Rock Rose (Kaya Gülü)", "Yoğun korku, panik ve dehşet hissini yatıştırır, cesaret ve sükûnet kazandırır."],
-                    ["Wild Oat (Yaban Yulafı)", "Yaşam yönüne dair kararsızlığı giderir, amaç ve berraklık kazandırır."],
-                    ["Rock Water", "Aşırı katılığı ve kendine sertliği yumuşatır, esneklik ve içsel akışı destekler."],
-                    ["Wild Rose (Yaban Gülü)", "Teslimiyet ve isteksizlik halini dönüştürür, yaşama ilgi ve canlılık uyandırır."],
-                    ["Scleranthus", "Kararsızlığı ve ani ruh hali dalgalanmalarını dengeler, denge ve kararlılık kazandırır."],
-                    ["Star of Bethlehem (Akyıldız)", "Şok ve travmanın ardından gelen umutsuzluğu yatıştırır, teselli ve iç denge uyandırır."],
-                    ["Vine (Üzüm)", "Baskın ve hükmedici eğilimleri yumuşatır, anlayışlı ve ilham veren liderliği destekler."],
-                  ] as const
-                ).map(([name, meaning], i) => (
-                  <tr key={i} className="odd:bg-cream even:bg-cream-deep/40">
-                    <td className="px-4 py-2.5 align-top font-medium text-plum">
-                      {name}
-                    </td>
-                    <td className="px-4 py-2.5 align-top text-plum/75">
-                      {meaning}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+        <section className="mx-auto max-w-4xl px-6 py-5">
+          <h2 className="text-3xl text-plum">Bach Çiçekleri ve Duygu Durumları</h2>
+          <p className="mt-3 leading-relaxed text-plum/70">
+            Bach çiçekleri yedi temel duygu durumu altında gruplanır. Bir başlığa
+            dokunarak o gruba ait çiçekleri ve anlamlarını görebilirsiniz.
+          </p>
+          <div className="mt-6 space-y-3">
+            {[
+              {
+                title: "Korku",
+                supports:
+                  "Korkularla yüzleşmeyi ve içsel cesareti geliştirmeyi destekler.",
+                flowers: [
+                  ["Aspen", "Sebebi bilinmeyen, açıklanamayan korkular ve huzursuzluk durumlarında destekleyicidir."],
+                  ["Cherry Plum", "Kontrolü kaybetme korkusu, taşkın duygular ve içsel baskı hissiyle ilişkilidir."],
+                  ["Mimulus", "Belirli korkular, fobiler ve günlük yaşamda tanımlanabilen endişelerle ilgilidir."],
+                  ["Rock Rose", "Yoğun panik, korku ve kriz anlarında yaşanan aşırı korku durumlarını temsil eder."],
+                  ["Red Chestnut", "Sevdiklerine yönelik aşırı endişe, koruma isteği ve kaygı durumlarında kullanılır."],
+                ],
+              },
+              {
+                title: "Belirsizlik",
+                supports:
+                  "Kendi fikirlerine güvenmeyi ve içsel netliği artırmayı destekler.",
+                flowers: [
+                  ["Cerato", "Kendi kararlarından sürekli şüphe eden, içsel güven eksikliği yaşayan kişilerle ilişkilidir."],
+                  ["Gentian", "Geçmiş hayal kırıklıkları ve başarısızlıklara takılarak motivasyon kaybı yaşayan kişiler için kullanılır."],
+                  ["Gorse", "Umudunu yitirmiş, çaresizlik hissi içinde olan ve yeniden deneme gücü bulmakta zorlanan bireyleri temsil eder."],
+                  ["Hornbeam", "Günlük yaşamı erteleme eğiliminde olan, zihinsel yorgunluk ve isteksizlik yaşayan kişilerle ilişkilidir."],
+                  ["Scleranthus", "İçsel kararsızlık yaşayan, iki seçenek arasında gidip gelen ve netlik bulmakta zorlanan kişiler için kullanılır."],
+                  ["Wild Oat", "Hayat yönünü belirlemekte zorlanan, hangi yöne ilerleyeceğini bilemeyen kişilerle ilişkilidir."],
+                ],
+              },
+              {
+                title: "Bulunulan Duruma Yetersiz İlgi",
+                supports:
+                  "Anda kalmayı, yaşam enerjisini artırmayı ve motivasyonu destekler.",
+                flowers: [
+                  ["Clematis", "Hayal dünyasında yaşayan, sık sık dalıp giden ve düş kuran kişileri temsil eder."],
+                  ["Chestnut Bud", "Deneyimlerinden yeterince ders alamayan ve aynı hataları tekrar eden kişiler için destekleyicidir."],
+                  ["Honeysuckle", "Geçmişe bağlı yaşayan, eski zamanları özleyen ve zihinsel olarak geçmişte kalan kişilerle ilişkilidir."],
+                  ["Olive", "Zihinsel ve fiziksel tükenmişlik, aşırı yorgunluk ve enerji düşüklüğü durumlarını temsil eder."],
+                  ["Mustard", "Sebepsiz görünen derin hüzün, ani gelen duygusal çökkünlük halleriyle ilişkilidir."],
+                  ["White Chestnut", "Zihinde sürekli tekrar eden düşünceler, zihinsel yoğunluk ve içsel gürültü durumlarında kullanılır."],
+                  ["Wild Rose", "Duygusal donukluk, ilgisizlik, isteksizlik ve yaşamdan vazgeçmişlik hissini temsil eder."],
+                ],
+              },
+              {
+                title: "Yalnızlık",
+                supports:
+                  "Diğer canlılarla bağ kurmayı ve aidiyet hissini fark etmeyi destekler.",
+                flowers: [
+                  ["Heather", "Sürekli konuşma ihtiyacı duyan, yalnız kalmakta zorlanan ve başkalarının ilgisini sürekli arayan kişileri temsil eder."],
+                  ["Impatiens", "Sabırsızlık, tahammülsüzlük ve alınganlık nedeniyle yalnız çalışmayı veya kendi başına olmayı tercih eden kişilerle ilişkilidir."],
+                  ["Water Violet", "Kendi iç dünyasında huzurlu, bağımsız, sessiz ve mesafeli kişileri temsil eder; yalnızlığı bilinçli olarak seçebilir, içsel dengeye önem verirler."],
+                ],
+              },
+              {
+                title: "Etki ve Fikirlere Karşı Aşırı Duyarlılık",
+                supports:
+                  "Köklenmeyi, içsel gücü ve duygusal dayanıklılığı güçlendirmeyi destekler.",
+                flowers: [
+                  ["Agrimony", "Dışarıdan neşeli ve güler yüzlü görünürken, iç dünyasında çatışmalar yaşayan ve sorunlarını gizlemeyi tercih eden kişileri temsil eder."],
+                  ["Centaury", "“Hayır” diyemeyen, başkalarının isteklerine kolayca boyun eğen ve kendi ihtiyaçlarını ihmal eden kişilerle ilişkilidir."],
+                  ["Holly", "Öfke, kıskançlık, güvensizlik ve kin gibi yoğun duygular yaşayan; temelinde sevgi eksikliği hissi bulunan kişiler için kullanılır."],
+                  ["Walnut", "Değişim dönemlerinde zorlanan, dış etkilere karşı hassas olan ve yeni koşullara uyum sağlamakta güçlük çeken kişileri temsil eder."],
+                ],
+              },
+              {
+                title: "Ümitsizlik ve Çaresizlik",
+                supports:
+                  "Yaşam amacını yeniden hatırlamayı ve yaşamdan keyif almayı destekler.",
+                flowers: [
+                  ["Crab Apple", "Kendinden hoşlanmama, öz eleştiri ve aşırı temizlik/takıntı eğilimleri olan kişilerle ilişkilidir."],
+                  ["Elm", "Sorumluluk duygusu yüksek olup geçici olarak tükenmişlik ve “yetersizlik” hissi yaşayan kişiler için kullanılır."],
+                  ["Larch", "Özgüven eksikliği yaşayan, kendini yetersiz hisseden ve denemekten çekinen kişilerle ilişkilidir."],
+                  ["Oak", "Görev bilinciyle sürekli mücadele eden, dinlenmeden çalışan ve asla pes etmeyen güçlü yapıya rağmen yorulan kişileri temsil eder."],
+                  ["Pine", "Kendini sürekli suçlayan, kontrol edemediği durumlar için bile sorumluluk hisseden kişilerle ilişkilidir."],
+                  ["Star of Bethlehem", "Şok, travma, ani kötü haberler ve yas süreçlerinde yaşanan duygusal etkiler için kullanılır."],
+                  ["Sweet Chestnut", "Yoğun çaresizlik, derin keder ve umutsuzluk hissinin zirve noktalarını temsil eder."],
+                ],
+              },
+              {
+                title: "Başkalarının İyiliğini Aşırı Önemseme",
+                supports:
+                  "Özsevgi, özşefkat ve kişisel sınırları koruma becerisini destekler.",
+                flowers: [
+                  ["Beech", "Hoşgörüsüz, eleştirel ve başkalarını kolayca yargılayan kişilerle ilişkilidir."],
+                  ["Chicory", "Sevgisini karşılık bekleyerek gösteren, sevdiklerini duygusal olarak kendine bağımlı hale getirme eğiliminde olan kişiler için kullanılır."],
+                  ["Rock Water", "Kendine karşı çok sert, mükemmeliyetçi, katı kurallara bağlı ve yaşamın keyiflerini kendine yasaklayan kişilerle ilişkilidir."],
+                  ["Vervain", "Fikirlerine güçlü şekilde bağlı, adalet duygusu yüksek, idealist ve aşırı tutkulu (bazen fanatikleşebilen) kişiler için kullanılır."],
+                  ["Vine", "Kontrolcü, yönlendirici, güçlü iradeli ve otoriter yapıda olan; liderlik gücünü baskın şekilde kullanan kişileri temsil eder."],
+                ],
+              },
+            ].map((g) => (
+              <details
+                key={g.title}
+                className="group rounded-2xl border border-plum/10 bg-cream p-5"
+              >
+                <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
+                  <span>
+                    <span className="font-serif text-xl text-plum">{g.title}</span>
+                    <span className="mt-1 block text-sm text-plum/60">
+                      {g.supports}
+                    </span>
+                  </span>
+                  <svg
+                    viewBox="0 0 24 24"
+                    aria-hidden
+                    className="mt-1.5 h-5 w-5 shrink-0 fill-gold transition-transform group-open:rotate-180"
+                  >
+                    <path d="M7 10l5 5 5-5z" />
+                  </svg>
+                </summary>
+                <ul className="mt-4 space-y-3 border-t border-plum/10 pt-4">
+                  {g.flowers.map(([name, desc]) => (
+                    <li key={name} className="flex gap-3 text-plum/75">
+                      <span aria-hidden>🌿</span>
+                      <span>
+                        <span className="font-medium text-plum">{name}</span> — {desc}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </details>
+            ))}
           </div>
         </section>
 
         {/* Image gallery. To add/replace: drop a JPG in public/bach/ and add an
             entry below (and a credit in the "Görsel kaynakları" list further down). */}
-        <section className="mx-auto max-w-4xl px-6 py-8">
+        <section className="mx-auto max-w-4xl px-6 py-5">
           <h2 className="text-3xl text-plum">Görseller</h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             {[
@@ -183,7 +282,7 @@ export default function BachCicekleriPage() {
         </section>
 
         {/* Video — short public-domain flower clip, self-hosted in public/bach/. */}
-        <section className="mx-auto max-w-4xl px-6 py-8">
+        <section className="mx-auto max-w-4xl px-6 py-5">
           <h2 className="text-3xl text-plum">Video</h2>
           <video
             className="mt-6 aspect-video w-full rounded-2xl bg-plum object-cover shadow-sm"
@@ -197,7 +296,7 @@ export default function BachCicekleriPage() {
         </section>
 
         {/* CTA */}
-        <section className="mx-auto max-w-3xl px-6 py-16 text-center">
+        <section className="mx-auto max-w-3xl px-6 py-10 text-center">
           <h2 className="text-3xl text-plum">Bir seans için hazır mısınız?</h2>
           <p className="mt-4 text-lg leading-relaxed text-plum/75">
             Size en uygun yolu birlikte bulalım.
