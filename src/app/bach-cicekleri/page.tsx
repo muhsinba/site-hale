@@ -55,11 +55,20 @@ export default function BachCicekleriPage() {
             Replace the heading and paragraph(s) with your own content.
             =================================================================== */}
         <section className="mx-auto max-w-3xl px-6 py-8">
-          <h2 className="text-3xl text-plum">Nasıl Çalışır?</h2>
+          <h2 className="text-3xl text-plum">Bach Çiçekleri Nasıl Etki Eder?</h2>
           <p className="mt-4 text-lg leading-relaxed text-plum/80">
-            {/* TODO: Bu bölüme metninizi yazın. */}
-            Buraya Bach Çiçekleri’nin nasıl çalıştığına dair açıklamanızı
-            ekleyin.
+            Bach Çiçekleri, kişinin yaşadığı olumsuz duygu durumlarını
+            dönüştürerek içsel dengeyi ve duygusal uyumu desteklemeyi amaçlar.
+            Dr. Edward Bach’a göre her olumsuz duygunun karşısında kişinin doğal
+            yapısında bulunan olumlu bir potansiyel vardır. Bach Çiçek Özleri,
+            bu olumlu niteliklerin yeniden ortaya çıkmasına yardımcı olarak
+            bireyin duygusal dengesini güçlendirir.
+          </p>
+          <p className="mt-4 text-lg leading-relaxed text-plum/80">
+            Örneğin korku duygusu cesarete, kararsızlık içsel güvene, umutsuzluk
+            ise umut ve yaşam enerjisine dönüşme potansiyeli taşır. Bach
+            Çiçekleri, bu dönüşüm sürecini nazik ve doğal bir şekilde
+            desteklemeyi hedefler.
           </p>
         </section>
 
@@ -71,57 +80,57 @@ export default function BachCicekleriPage() {
               <thead>
                 <tr className="bg-plum text-cream">
                   <th className="px-4 py-3 font-medium">Çiçek</th>
-                  <th className="px-4 py-3 font-medium">Anlamı / Kullanım Alanı</th>
+                  <th className="px-4 py-3 font-medium">Kullanım Alanı ve Etkisi</th>
                 </tr>
               </thead>
               <tbody>
                 {(
                   [
-                    ["Agrimony (Kaşık Otu)", "Çeşitli zihinsel sıkıntılar"],
-                    ["Aspen (Tirek Kavak)", "Endişe hali, sebepsiz korkular, açıklanamayan huzursuzluk hissi"],
-                    ["Cerato", "Her daim danışma ve onaylanma ihtiyacı duyma"],
-                    ["Cherry Plum (Erik Ağacı)", "Aklını kaybetme korkusu"],
-                    ["Chestnut Bud (Kestane Tomurcuğu)", "Hatalardan asla ders çıkaramama"],
-                    ["Chicory (Hindiba)", "Bencil bir şekilde mülkiyet düşkünü olma"],
-                    ["Olive (Zeytin Ağacı)", "Enerji yetersizliği"],
-                    ["Pine (Çam)", "Kendini ayıplama, suçluluk duygusu hissetme"],
-                    ["Star of Bethlehem", "Şok geçirme"],
-                    ["Sweet Chestnut (Kestane)", "Çok şiddetli bir şekilde zihinsel ızdırap çekmek"],
-                    ["White Chestnut (Ak Kestane)", "İstenmeyen farklı düşünceler"],
-                    ["Wild Oat (Yaban Otu)", "Yersiz şüphe duymak"],
-                    ["Wild Rose (Yaban Gülü)", "Teslimiyet, cansızlık, hissizlik"],
-                    ["Willow (Söğüt Ağacı)", "Gücenme, içerleme"],
-                    ["Holly (Çobanpüskülü)", "Kızgınlık, sinirlilik, kıskançlık, kuşkuculuk"],
-                    ["Gorse (Karaçalı)", "Umutsuz, çaresiz, kötümser"],
-                    ["Heather (Funda)", "Konuşkan fakat yalnız, başkalarının varlığına muhtaç olanlar"],
-                    ["Gentian (Yılanotu)", "Başaracağına inanmayan, güvensiz"],
-                    ["Elm (Karaağaç)", "Ağır sorumluluklar altında ezilme hissi"],
-                    ["Crab Apple (Yaban Elması)", "Duygusal ve fiziksel olarak “kirli” hissetme"],
-                    ["Clematis (Akasma)", "Konsantrasyon eksikliği; hayal dünyasında olma"],
-                    ["Cherry Plum (Kiraz Eriği)", "Gergin, çaresiz, kontrolü kaybetme korkusu; intihar eğilimleri, sinir krizleri"],
-                    ["Willow (Söğüt)", "Pişmanlık, kendine acıma, hoşnutsuzluk, kızgınlık"],
-                    ["Beech (Kayın)", "Fazlasıyla eleştirel ve tahammülsüz olanlar"],
-                    ["Agrimony (Kasıkotu)", "Gülüp eğleniyorum, yani problem yok…"],
-                    ["Honeysuckle (Hanımeli)", "Geçmişte yaşamak, geçmişe takılı kalmak"],
-                    ["Hornbeam (Gürgen)", "İsteksizlik, motivasyonsuzluk hali"],
-                    ["Sweet Chestnut (Tatlı Kestane)", "Son raddede duygusal ve fiziksel acı; dayanma noktalarının en sonunda olanlar"],
-                    ["Impatiens (Sabırotu)", "Sabırsız, aceleci, içten gelen bir aciliyet hissi"],
-                    ["Vervain (Mine Çiçeği)", "Hemen şimdi dünyayı kurtarma hevesinde olanlar"],
-                    ["Larch (Karaçam)", "Yetersizlik hissi; kendine güven eksikliği"],
-                    ["Centaury (Kantaron)", "Hayır demekte güçlük çeken, herkesi memnun etme kaygısı yaşayan kişiler"],
-                    ["Mimulus", "Korku veya huzursuzluk hissi; fazla hassas ve çekingen"],
-                    ["Walnut (Ceviz)", "Değişimin ya da değişim çabasının kürü"],
-                    ["Mustard (Hardal)", "Kara bir bulut gibi çöken üzüntü ve karamsarlık"],
-                    ["Water Violet (Su Menekşesi)", "Gururlu ve ilgisiz; kendi başına olmaktan memnun olma"],
-                    ["Red Chestnut (Kızıl Kestane)", "Yakınlarının güvenine dair korku düzeyinde endişe duyma"],
-                    ["White Chestnut (Ak Kestane)", "Rahatsız edici düşünceler; kafası meşgul ve düşüncelerle dolu"],
-                    ["Rock Rose (Kaya Gülü)", "Dehşet, büyük korku, panik atak, histeri hali"],
-                    ["Wild Oat (Yaban Yulafı)", "Tatminsizlik, kararsızlık, hayatta doğru yolun ne olduğuna dair belirsizlik"],
-                    ["Rock Water", "Katılık, disiplin ve kendi doğallığını reddetme"],
-                    ["Wild Rose (Yaban Gülü)", "Geriye çekilmiş, isteksiz, enerjisiz; her şeyi sessizce kabul etme"],
-                    ["Scleranthus", "Kararsızlık hali, sık ve ani ruh hali değişiklikleri"],
-                    ["Star of Bethlehem (Akyıldız)", "Hayattaki bir şok ya da travmanın ardından başlayan umutsuzluk ve mutsuzluk"],
-                    ["Vine (Üzüm)", "Liderler, hükmetmeyi sevenler"],
+                    ["Agrimony (Kaşık Otu)", "Çeşitli zihinsel sıkıntıları yatıştırır ve içsel huzur hissi uyandırır."],
+                    ["Aspen (Tirek Kavak)", "Sebepsiz korkuları ve açıklanamayan huzursuzluğu yumuşatır, güven ve sükûnet kazandırır."],
+                    ["Cerato", "Sürekli onay arama ihtiyacını dengeler ve kişinin kendi iç sesine güvenmesini destekler."],
+                    ["Cherry Plum (Erik Ağacı)", "Kontrolünü ya da aklını kaybetme korkusunu yatıştırır ve iç huzuru güçlendirir."],
+                    ["Chestnut Bud (Kestane Tomurcuğu)", "Aynı hataları tekrarlama eğilimini kırar ve deneyimlerden ders çıkarmayı kolaylaştırır."],
+                    ["Chicory (Hindiba)", "Sahiplenici ve karşılık bekleyen tutumu yumuşatır, koşulsuz sevgiyi destekler."],
+                    ["Olive (Zeytin Ağacı)", "Tükenmişliği ve enerji yetersizliğini giderir, canlılığı ve gücü yeniden kazandırır."],
+                    ["Pine (Çam)", "Suçluluk duygusunu ve kendini ayıplamayı hafifletir, kendini bağışlamayı destekler."],
+                    ["Star of Bethlehem", "Şok ve travmanın etkilerini yatıştırır, teselli ve denge hissi uyandırır."],
+                    ["Sweet Chestnut (Kestane)", "Derin zihinsel ızdırabı yumuşatır ve içsel ferahlama ile umut kazandırır."],
+                    ["White Chestnut (Ak Kestane)", "Zihni meşgul eden istenmeyen düşünceleri sakinleştirir ve zihinsel berraklık sağlar."],
+                    ["Wild Oat (Yaban Otu)", "Belirsizliği ve kararsızlığı azaltır, yaşamda yön bulmayı kolaylaştırır."],
+                    ["Wild Rose (Yaban Gülü)", "İlgisizlik ve cansızlık halini dönüştürür, yaşama dair ilgi ve canlılık uyandırır."],
+                    ["Willow (Söğüt Ağacı)", "Gücenme ve içerleme duygularını çözer, affediciliği ve iç huzuru destekler."],
+                    ["Holly (Çobanpüskülü)", "Öfke, kıskançlık ve kuşku gibi duyguları yatıştırır, sevgi ve hoşgörü uyandırır."],
+                    ["Gorse (Karaçalı)", "Umutsuzluk ve karamsarlığı dağıtır, içte yeniden umut uyandırır."],
+                    ["Heather (Funda)", "Aşırı kendine odaklanmayı dengeler, başkalarını dinlemeyi ve iç dengeyi güçlendirir."],
+                    ["Gentian (Yılanotu)", "Engeller karşısında oluşan güvensizliği giderir, inanç ve kararlılığı destekler."],
+                    ["Elm (Karaağaç)", "Sorumlulukların altında ezilme hissini hafifletir, güç ve özgüven kazandırır."],
+                    ["Crab Apple (Yaban Elması)", "Kendini “kirli” ya da yetersiz hissetme duygusunu arındırır, öz kabul ve ferahlık uyandırır."],
+                    ["Clematis (Akasma)", "Dağınık dikkati toplar ve kişiyi anın gerçekliğine, yaşama bağlar."],
+                    ["Cherry Plum (Kiraz Eriği)", "Kontrolü kaybetme korkusunu ve aşırı gerginliği yatıştırır, sakinlik ve iç denge kazandırır."],
+                    ["Willow (Söğüt)", "Kendine acıma ve hoşnutsuzluğu dönüştürür, sorumluluk alma ve şükran duygusunu destekler."],
+                    ["Beech (Kayın)", "Aşırı eleştirel ve tahammülsüz tutumu yumuşatır, hoşgörü ve anlayış uyandırır."],
+                    ["Agrimony (Kasıkotu)", "Neşeli bir maskenin ardına gizlenen iç sıkıntıyı açığa çıkarır ve gerçek iç huzuru destekler."],
+                    ["Honeysuckle (Hanımeli)", "Geçmişe takılı kalmayı çözer ve kişinin şimdiki ana dönmesini destekler."],
+                    ["Hornbeam (Gürgen)", "Zihinsel yorgunluğu ve isteksizliği giderir, tazelik ve motivasyon kazandırır."],
+                    ["Sweet Chestnut (Tatlı Kestane)", "Dayanma sınırındaki derin acıyı yumuşatır ve içte umut ile ferahlama uyandırır."],
+                    ["Impatiens (Sabırotu)", "Sabırsızlığı ve aceleciliği yatıştırır, sabır ve akışta kalma hissi kazandırır."],
+                    ["Vervain (Mine Çiçeği)", "Aşırı hevesi ve gerginliği dengeler, sakinlik ve esneklik kazandırır."],
+                    ["Larch (Karaçam)", "Yetersizlik hissini giderir ve özgüveni güçlendirir."],
+                    ["Centaury (Kantaron)", "Hayır demekte zorlanmayı dönüştürür, kişinin kendi sınırlarını korumasını destekler."],
+                    ["Mimulus", "Bilinen korkuları ve çekingenliği yatıştırır, cesaret ve sükûnet kazandırır."],
+                    ["Walnut (Ceviz)", "Değişim ve yeni başlangıçlarda kişiyi dış etkilerden korur, uyum sağlamayı kolaylaştırır."],
+                    ["Mustard (Hardal)", "Nedeni belirsiz hüzün ve karamsarlığı dağıtır, içte aydınlık ve neşe uyandırır."],
+                    ["Water Violet (Su Menekşesi)", "Mesafeli ve yalnızlığa eğilimli tutumu yumuşatır, sıcaklık ve paylaşımı destekler."],
+                    ["Red Chestnut (Kızıl Kestane)", "Sevdikleri için duyulan aşırı kaygıyı yatıştırır, güven ve iç sükûnet kazandırır."],
+                    ["White Chestnut (Ak Kestane)", "Sürekli dönüp duran rahatsız edici düşünceleri sakinleştirir ve zihinsel dinginlik sağlar."],
+                    ["Rock Rose (Kaya Gülü)", "Yoğun korku, panik ve dehşet hissini yatıştırır, cesaret ve sükûnet kazandırır."],
+                    ["Wild Oat (Yaban Yulafı)", "Yaşam yönüne dair kararsızlığı giderir, amaç ve berraklık kazandırır."],
+                    ["Rock Water", "Aşırı katılığı ve kendine sertliği yumuşatır, esneklik ve içsel akışı destekler."],
+                    ["Wild Rose (Yaban Gülü)", "Teslimiyet ve isteksizlik halini dönüştürür, yaşama ilgi ve canlılık uyandırır."],
+                    ["Scleranthus", "Kararsızlığı ve ani ruh hali dalgalanmalarını dengeler, denge ve kararlılık kazandırır."],
+                    ["Star of Bethlehem (Akyıldız)", "Şok ve travmanın ardından gelen umutsuzluğu yatıştırır, teselli ve iç denge uyandırır."],
+                    ["Vine (Üzüm)", "Baskın ve hükmedici eğilimleri yumuşatır, anlayışlı ve ilham veren liderliği destekler."],
                   ] as const
                 ).map(([name, meaning], i) => (
                   <tr key={i} className="odd:bg-cream even:bg-cream-deep/40">
@@ -173,25 +182,18 @@ export default function BachCicekleriPage() {
           </div>
         </section>
 
-        {/* ===================================================================
-            VIDEO TEMPLATE
-            Replace the placeholder below with a responsive embed, e.g. YouTube:
-              <div className="aspect-video overflow-hidden rounded-2xl">
-                <iframe
-                  className="h-full w-full"
-                  src="https://www.youtube.com/embed/VIDEO_ID"
-                  title="Bach Çiçekleri"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
-            (VIDEO_ID = the part after watch?v= in the YouTube URL.)
-            =================================================================== */}
+        {/* Video — short public-domain flower clip, self-hosted in public/bach/. */}
         <section className="mx-auto max-w-4xl px-6 py-8">
           <h2 className="text-3xl text-plum">Video</h2>
-          <div className="mt-6 flex aspect-video items-center justify-center rounded-2xl border border-dashed border-plum/25 bg-cream-deep text-plum/40">
-            Video buraya gelecek
-          </div>
+          <video
+            className="mt-6 aspect-video w-full rounded-2xl bg-plum object-cover shadow-sm"
+            controls
+            preload="metadata"
+            playsInline
+          >
+            <source src="/bach/flowers.webm" type="video/webm" />
+            Tarayıcınız bu videoyu oynatamıyor.
+          </video>
         </section>
 
         {/* CTA */}
@@ -216,11 +218,11 @@ export default function BachCicekleriPage() {
           </div>
         </section>
 
-        {/* Image credits — required by the CC licenses of the gallery photos. */}
+        {/* Credits — required by the CC licenses of the gallery photos and music. */}
         <section className="mx-auto max-w-4xl px-6 pb-12">
           <details className="text-xs text-plum/50">
             <summary className="cursor-pointer hover:text-plum/70">
-              Görsel kaynakları ve telif
+              Kaynaklar ve telif
             </summary>
             <ul className="mt-3 space-y-1">
               {[
@@ -241,6 +243,15 @@ export default function BachCicekleriPage() {
                   label:
                     "Maymun Çiçeği (Mimulus guttatus) — Krzysztof Ziarnek (Kenraiz), CC BY-SA 4.0",
                   href: "https://commons.wikimedia.org/wiki/File:Mimulus_guttatus_kz08.jpg",
+                },
+                {
+                  label: "Video: “Flowers” — U.S. Forest Service, Public Domain",
+                  href: "https://commons.wikimedia.org/wiki/File:Flowers_(20210715-FPAC-KLS-0001).webm",
+                },
+                {
+                  label:
+                    "Müzik: “Meditation Impromptu 01” — Kevin MacLeod (incompetech.com), CC BY 3.0",
+                  href: "https://commons.wikimedia.org/wiki/File:Meditation_Impromptu_01_(ISRC_USUAN1100163).mp3",
                 },
               ].map((c) => (
                 <li key={c.href}>
