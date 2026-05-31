@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Cormorant_Garamond, Jost } from "next/font/google";
 import "./globals.css";
 import ChatWidget from "@/components/ChatWidget";
+
+// Google Analytics (gtag.js) measurement ID.
+const GA_ID = "G-L4M4JF4D17";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -38,6 +42,18 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         {children}
         <ChatWidget />
+
+        {/* Google Analytics (gtag.js) — loads on every page via the root layout */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${GA_ID}');`}
+        </Script>
       </body>
     </html>
   );
