@@ -1,8 +1,10 @@
 import { PrismaClient } from "@prisma/client";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 
 const prisma = new PrismaClient();
 
-// PERSONALIZE: edit the services and testimonials below, then run `npm run db:seed`.
+// PERSONALIZE: edit the services below, then run `npm run db:seed`.
 const services = [
   {
     slug: "bach-flowers",
@@ -67,26 +69,17 @@ const services = [
   },
 ];
 
-const testimonials = [
-  {
-    quote:
-      "Seansımdan yıllardır olmadığım kadar hafiflemiş ayrıldım. Yarattığı alan gerçekten kutsal — bırakmak için kendimi tamamen güvende hissettim.",
-    author: "Elif K.",
-    order: 1,
-  },
-  {
-    quote:
-      "Sezgileri olağanüstü. Tam olarak neye ihtiyacım olduğunu hissetti ve bana büyük bir sıcaklık ve özenle rehberlik etti. O günden beri düzenli olarak geliyorum.",
-    author: "Mehmet T.",
-    order: 2,
-  },
-  {
-    quote:
-      "Yaşadığım en huzurlu, en topraklayıcı deneyim. Seanslarımızı tüm varlığım için bir sıfırlama olarak görüyorum — beden, zihin ve ruh.",
-    author: "Ayşe L.",
-    order: 3,
-  },
-];
+// Starter testimonials live in deploy/testimonials.seed.json (the same set the
+// replace-testimonials script uses), so the seed and the prod sync never drift.
+type SeedTestimonial = {
+  quote: string;
+  author: string;
+  published?: boolean;
+  order?: number;
+};
+const testimonials: SeedTestimonial[] = JSON.parse(
+  readFileSync(join(process.cwd(), "deploy", "testimonials.seed.json"), "utf8"),
+);
 
 async function main() {
   console.log("Seeding database...");
