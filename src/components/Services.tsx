@@ -4,6 +4,7 @@ import type { Service } from "@prisma/client";
 // Services that have a dedicated detail page: slug -> route.
 const detailPages: Record<string, string> = {
   "bach-flowers": "/bach-cicekleri",
+  "scio-quantum-biofeedback": "/scio-quantum-biofeedback",
 };
 
 function formatDuration(min: number) {

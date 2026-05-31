@@ -15,13 +15,13 @@ const services = [
     order: 1,
   },
   {
-    slug: "holistic-wellness-journey",
-    title: "Bütünsel İyilik Yolculuğu",
+    slug: "scio-quantum-biofeedback",
+    title: "SCIO Quantum Biofeedback",
     description:
-      "Kalıcı denge için enerji çalışması, sezgisel rehberlik ve topraklanma uygulamalarını birleştiren, kişinin tümünü kapsayan uzun bir seans.",
+      "Bedenin enerjetik tepkilerini ölçen SCIO biofeedback teknolojisiyle stres kaynaklarını belirleyip nazik frekans çalışmalarıyla dengeyi destekleyen derinlemesine bir seans.",
     icon: "☾",
     priceLabel: "$140",
-    durationMin: 90,
+    durationMin: 60,
     featured: true,
     order: 2,
   },
