@@ -37,6 +37,7 @@ export default function RootLayout({
   return (
     <html
       lang="tr"
+      data-scroll-behavior="smooth"
       className={`${cormorant.variable} ${jost.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">

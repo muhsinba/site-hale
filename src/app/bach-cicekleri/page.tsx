@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Footer from "@/components/Footer";
+import SubHeader from "@/components/SubHeader";
 
 export const metadata: Metadata = {
   title: "Bach Çiçekleri Nedir? — Hale Bayramoğlu",
@@ -12,21 +13,7 @@ export const metadata: Metadata = {
 export default function BachCicekleriPage() {
   return (
     <>
-      {/* Top bar — simple nav back to the home page + booking CTA */}
-      <header className="sticky top-0 z-40 border-b border-plum/10 bg-cream/90 backdrop-blur">
-        <div className="mx-auto flex max-w-4xl items-center justify-between px-6 py-4">
-          <Link href="/" className="flex items-center gap-2">
-            <span className="text-gold text-xl">✦</span>
-            <span className="font-serif text-xl text-plum">Hale Bayramoğlu</span>
-          </Link>
-          <Link
-            href="/#book"
-            className="rounded-full bg-gold px-5 py-2 text-sm font-medium text-plum transition-transform hover:scale-[1.03]"
-          >
-            Randevu Al
-          </Link>
-        </div>
-      </header>
+      <SubHeader />
 
       <main className="bg-cream">
         {/* Hero */}

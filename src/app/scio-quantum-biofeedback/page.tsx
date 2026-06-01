@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import Footer from "@/components/Footer";
+import SubHeader from "@/components/SubHeader";
 
 export const metadata: Metadata = {
   title: "SCIO Quantum Biofeedback — Hale Bayramoğlu",
@@ -11,21 +13,7 @@ export const metadata: Metadata = {
 export default function ScioPage() {
   return (
     <>
-      {/* Top bar */}
-      <header className="sticky top-0 z-40 border-b border-plum/10 bg-cream/90 backdrop-blur">
-        <div className="mx-auto flex max-w-4xl items-center justify-between px-6 py-4">
-          <Link href="/" className="flex items-center gap-2">
-            <span className="text-gold text-xl">✦</span>
-            <span className="font-serif text-xl text-plum">Hale Bayramoğlu</span>
-          </Link>
-          <Link
-            href="/#book"
-            className="rounded-full bg-gold px-5 py-2 text-sm font-medium text-plum transition-transform hover:scale-[1.03]"
-          >
-            Randevu Al
-          </Link>
-        </div>
-      </header>
+      <SubHeader />
 
       <main className="bg-cream">
         {/* Hero */}
@@ -49,6 +37,31 @@ export default function ScioPage() {
           </p>
         </section>
 
+        {/* Biofeedback Nedir */}
+        <section className="mx-auto max-w-3xl px-6 py-5">
+          <h2 className="text-3xl text-plum">Biofeedback Nedir?</h2>
+          <p className="mt-4 text-lg leading-relaxed text-plum/80">
+            Biofeedback; kalp atış hızı, kas gerginliği, solunum, terleme, cilt
+            sıcaklığı, kan basıncı ve hatta beyin dalgaları gibi normalde
+            otomatik olarak gerçekleşen vücut fonksiyonlarını kontrol etmeyi
+            öğrenmenizi amaçlayan bir yöntemdir. Bu fonksiyonları kontrol etmeyi
+            öğrenerek sağlık durumunuzu iyileştirebilir, kronik ağrıları
+            hafifletebilir, stresi azaltabilir veya fiziksel ve zihinsel
+            performansınızı artırabilirsiniz (buna bazen zirve performans
+            eğitimi de denir).
+          </p>
+          <p className="mt-4 text-lg leading-relaxed text-plum/80">
+            Biofeedback eğitimi sırasında vücudunuza bağlanan sensörler; nabız,
+            cilt sıcaklığı, kas tonusu, beyin dalgası örüntüleri veya diğer
+            fizyolojik fonksiyonlardaki değişiklikleri algılar. Bu değişiklikler
+            bir ses, yanıp sönen ışık veya ekrandaki görüntü değişimi şeklinde
+            geri bildirim (feedback) oluşturur ve böylece fizyolojik değişimin
+            gerçekleştiğini fark edersiniz. Zamanla, biofeedback terapistinizin
+            yardımıyla, vücudunuzun otomatik işlevleri üzerinde bilinçli kontrol
+            geliştirerek bu sinyalleri değiştirmeyi öğrenebilirsiniz.
+          </p>
+        </section>
+
         {/* Nasıl Çalışır */}
         <section className="mx-auto max-w-3xl px-6 py-5">
           <h2 className="text-3xl text-plum">Nasıl Çalışır?</h2>
@@ -58,6 +71,90 @@ export default function ScioPage() {
             karşılıklı “geri bildirim” döngüsü, bedenin dengeye yönelme eğilimini
             destekler. Seans tamamen ağrısız ve gevşeticidir.
           </p>
+        </section>
+
+        {/* Hangi amaçlarla kullanılır */}
+        <section className="mx-auto max-w-3xl px-6 py-5">
+          <h2 className="text-3xl text-plum">Hangi Amaçlarla Kullanılır?</h2>
+          <p className="mt-4 text-lg leading-relaxed text-plum/80">
+            Biofeedback birçok sağlık sorununun tedavisinde kullanılmış olsa da,
+            bunların çoğu için bilimsel kanıtlar karışıktır. Bununla birlikte
+            bazı alanlarda etkinliği daha güçlü şekilde desteklenmektedir.
+          </p>
+          <p className="mt-4 text-lg leading-relaxed text-plum/80">
+            Çok sayıda araştırma, biofeedback’in aşağıdaki durumlarda etkili
+            olabileceğini göstermektedir:
+          </p>
+          <ul className="mt-4 space-y-3 text-lg leading-relaxed text-plum/80">
+            {[
+              "Migren ataklarını azaltabildiği",
+              "Gerilim tipi baş ağrılarını hafifletebildiği",
+            ].map((item) => (
+              <li key={item} className="flex gap-3">
+                <span aria-hidden className="text-gold">
+                  ✦
+                </span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-4 text-lg leading-relaxed text-plum/80">
+            Ayrıca aşağıdaki durumlarda da etkili olabileceği bulunmuştur:
+          </p>
+          <ul className="mt-4 space-y-3 text-lg leading-relaxed text-plum/80">
+            {[
+              "Bazı idrar kaçırma (üriner inkontinans) türleri",
+              "Dışkı kaçırma (fekal inkontinans)",
+              "Aşırı kas kasılmalarına bağlı anal ağrı",
+              "Anüs çevresindeki kasların işlev bozukluğuna bağlı kabızlık",
+            ].map((item) => (
+              <li key={item} className="flex gap-3">
+                <span aria-hidden>🌿</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        {/* Yardımcı olabileceği diğer durumlar */}
+        <section className="mx-auto max-w-3xl px-6 py-5">
+          <h2 className="text-3xl text-plum">
+            Yardımcı Olabileceği Diğer Durumlar
+          </h2>
+          <p className="mt-4 text-lg leading-relaxed text-plum/80">
+            Biofeedback bazı kişilerde aşağıdaki rahatsızlıkların belirtilerini
+            azaltmak amacıyla kullanılmıştır:
+          </p>
+          <ul className="mt-5 grid gap-x-6 gap-y-2 leading-relaxed text-plum/75 sm:grid-cols-2">
+            {[
+              "Kronik ağrı",
+              "Migren",
+              "Fibromiyalji",
+              "Temporomandibular eklem (TMJ / çene eklemi) bozuklukları",
+              "Sindirim sistemi rahatsızlıkları (özellikle kabızlık)",
+              "İdrar ve dışkı kaçırma",
+              "Yüksek tansiyon (hipertansiyon)",
+              "Kalp ritim bozuklukları (aritmiler)",
+              "Alkol dahil bağımlılıklar",
+              "Epilepsi",
+              "Felç ve bazı hareket bozuklukları",
+              "Omurilik yaralanmaları",
+              "Uyku bozuklukları",
+              "Premenstrüel sendrom (PMS)",
+              "Gece altını ıslatma (enürezis)",
+              "Dikkat eksikliği bozukluğu (ADD)",
+              "Dikkat eksikliği ve hiperaktivite bozukluğu (ADHD)",
+              "Panik bozukluk",
+              "Anksiyete bozuklukları",
+            ].map((item) => (
+              <li key={item} className="flex gap-2">
+                <span aria-hidden className="text-gold">
+                  ·
+                </span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
         </section>
 
         {/* Seans nasıl ilerler */}
@@ -99,22 +196,79 @@ export default function ScioPage() {
           </ul>
         </section>
 
-        {/* ===================================================================
-            GÖRSELLER (isteğe bağlı) — Görselleri public/scio/ klasörüne ekleyin,
-            sonra dosyanın başına `import Image from "next/image";` ekleyip
-            aşağıdaki kutuları <Image ... /> ile değiştirin.
-            =================================================================== */}
+        {/* Seans öncesi hazırlık */}
+        <section className="mx-auto max-w-3xl px-6 py-5">
+          <h2 className="text-3xl text-plum">Seans Öncesi Hazırlık</h2>
+          <p className="mt-4 text-lg leading-relaxed text-plum/80">
+            Biofeedback uygulamasına başlamadan önce bazı hazırlıklar yararlı
+            olabilir:
+          </p>
+          <ul className="mt-4 space-y-3 text-lg leading-relaxed text-plum/80">
+            {[
+              "Biofeedback hakkında okuyarak sürecin genel mantığını öğrenmek",
+              "Tedavinin gerektirdiği zaman ve çabayı göstermeye istekli olmak",
+            ].map((item) => (
+              <li key={item} className="flex gap-3">
+                <span aria-hidden>🌿</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-4 text-lg leading-relaxed text-plum/80">
+            Eğer doktorunuz sizi bir biofeedback terapistine yönlendirdiyse,
+            terapistiniz tedaviye başlamadan önce mevcut sağlık durumunuz
+            hakkında gerekli bilgileri doktorunuzdan alacaktır.
+          </p>
+          <p className="mt-4 text-lg leading-relaxed text-plum/80">
+            Doktor yönlendirmesi olmadan biofeedback denemek istiyorsanız,
+            öncelikle doktorunuzla görüşmeniz önerilir. Böylece biofeedback’in
+            sizin sağlık durumunuz için uygun olup olmadığı konusunda tıbbi
+            görüş alabilirsiniz. Ayrıca doktorunuz kullandığınız tüm tedavi
+            yöntemleri hakkında bilgi sahibi olur.
+          </p>
+        </section>
+
+        {/* Görseller — free CC0 images (StockSnap). Replace with Hale's own
+            photos anytime by dropping files into public/scio/. */}
         <section className="mx-auto max-w-4xl px-6 py-5">
           <h2 className="text-3xl text-plum">Görseller</h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
-            {[1, 2].map((n) => (
-              <div
-                key={n}
-                className="flex aspect-[4/3] items-center justify-center rounded-2xl border border-dashed border-plum/25 bg-cream-deep text-plum/40"
-              >
-                Görsel {n} buraya gelecek
-              </div>
-            ))}
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+              <Image
+                src="/scio/bio-feedback.jpg"
+                alt="Biofeedback nasıl çalışır — beden sinyalleri ekranda geri bildirim olarak gösterilir"
+                fill
+                className="object-cover"
+                sizes="(max-width: 640px) 100vw, 50vw"
+              />
+            </div>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+              <Image
+                src="/scio/scio-patient.jpg"
+                alt="SCIO biofeedback seansı — bilek, ayak bileği ve baş bağlantılarıyla dinlenen danışan"
+                fill
+                className="object-cover"
+                sizes="(max-width: 640px) 100vw, 50vw"
+              />
+            </div>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+              <Image
+                src="/scio/energy-light.jpg"
+                alt="Avuç içine düşen ışık tayfı — enerji ve frekans"
+                fill
+                className="object-cover"
+                sizes="(max-width: 640px) 100vw, 50vw"
+              />
+            </div>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+              <Image
+                src="/scio/session.jpg"
+                alt="Sıcak ve sakin bir ortamda dinlenen bir kişi"
+                fill
+                className="object-cover"
+                sizes="(max-width: 640px) 100vw, 50vw"
+              />
+            </div>
           </div>
         </section>
 
