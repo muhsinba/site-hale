@@ -8,7 +8,7 @@ const prisma = new PrismaClient();
 const services = [
   {
     slug: "bach-flowers",
-    title: "Bach Çiçekleri Nedir?",
+    title: "Bach Çiçekleri Terapisi",
     description:
       "Bach Çiçekleri (Bach Flower Remedies), İngiliz doktor, bakteriyolog ve homeopat Dr. Edward Bach tarafından 1930’lu yıllarda geliştirilmiş doğal bir destek yöntemidir. Dr. Bach, uzun yıllar boyunca yaptığı gözlemler sonucunda insanların fiziksel rahatsızlıklarının çoğunun altında çözülmemiş duygusal çatışmaların, stresin ve içsel dengesizliklerin bulunduğunu savunmuştur. Ona göre gerçek iyilik hali, beden, zihin ve ruh arasındaki uyumun sağlanmasıyla mümkündür.",
     icon: "❀",
