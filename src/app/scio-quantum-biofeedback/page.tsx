@@ -272,14 +272,19 @@ export default function ScioPage() {
           </div>
         </section>
 
-        {/* ===================================================================
-            VIDEO (isteğe bağlı) — Kısa bir tanıtım videosu eklemek için bu kutuyu
-            self-hosted bir <video> ya da YouTube embed ile değiştirin.
-            =================================================================== */}
+        {/* Video — original Türkçe slideshow explainer (public/scio/scio-explainer.mp4). */}
         <section className="mx-auto max-w-4xl px-6 py-5">
           <h2 className="text-3xl text-plum">Video</h2>
-          <div className="mt-6 flex aspect-video items-center justify-center rounded-2xl border border-dashed border-plum/25 bg-cream-deep text-plum/40">
-            Video buraya gelecek
+          <div className="mt-6 overflow-hidden rounded-2xl shadow-sm">
+            <video
+              controls
+              preload="metadata"
+              poster="/scio/scio-poster.jpg"
+              className="aspect-video w-full bg-plum/5"
+            >
+              <source src="/scio/scio-explainer.mp4" type="video/mp4" />
+              Tarayıcınız bu videoyu oynatamıyor.
+            </video>
           </div>
         </section>
 
