@@ -41,6 +41,8 @@ export default function Services({ services }: { services: Service[] }) {
             const href = detail ?? "#book";
             // "Astrolojik Bakış" gets a distinct light-blue look + "En Aranan" badge.
             const isAstro = s.slug === "astrolojik-bakis";
+            // "Bach Çiçekleri" gets a soft floral (rose) look + "En Popüler" badge.
+            const isBach = s.slug === "bach-flowers";
             return (
               <Link
                 key={s.id}
@@ -50,7 +52,9 @@ export default function Services({ services }: { services: Service[] }) {
                     ? "border-gold bg-gradient-to-b from-plum to-plum-soft text-cream shadow-lg"
                     : isAstro
                       ? "border-sky-200 bg-sky-50"
-                      : "border-plum/10 bg-cream"
+                      : isBach
+                        ? "border-rose-300 bg-rose-100"
+                        : "border-plum/10 bg-cream"
                 }`}
               >
                 {s.featured && (
@@ -61,6 +65,11 @@ export default function Services({ services }: { services: Service[] }) {
                 {isAstro && (
                   <span className="absolute -top-3 left-8 rounded-full bg-sky-500 px-4 py-1 text-xs font-medium uppercase tracking-wide text-white">
                     En Aranan
+                  </span>
+                )}
+                {isBach && (
+                  <span className="absolute -top-3 left-8 rounded-full bg-rose-400 px-4 py-1 text-xs font-medium uppercase tracking-wide text-white">
+                    En Popüler
                   </span>
                 )}
                 <div
