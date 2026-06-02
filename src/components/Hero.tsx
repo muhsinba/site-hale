@@ -48,9 +48,9 @@ export default function Hero() {
           </a>
           <a
             href="#services"
-            className="rounded-full border border-cream/40 px-8 py-3.5 text-cream transition-colors hover:bg-cream/10"
+            className="rounded-full bg-sky-200 px-8 py-3.5 font-medium text-plum shadow-lg transition-transform hover:scale-105"
           >
-            Çalışmaları Keşfet
+            Çalışmalarımı Keşfet
           </a>
         </div>
       </div>

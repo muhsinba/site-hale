@@ -24,7 +24,7 @@ export default function Services({ services }: { services: Service[] }) {
           <p className="mb-3 text-sm uppercase tracking-[0.2em] text-gold">
             Sunduklarım
           </p>
-          <h2 className="text-4xl md:text-5xl">Çalışmalar</h2>
+          <h2 className="text-4xl md:text-5xl">Çalışmalarım</h2>
           <p className="mt-5 text-lg leading-relaxed text-plum/75">
             Her çalışma, yenilenmeye giden kişiye özel bir yoldur. Hangisinin
             size uygun olduğundan emin değil misiniz?{" "}

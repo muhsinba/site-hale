@@ -6,7 +6,7 @@ import Link from "next/link";
 // Links point back to the home page sections, so they work from any sub-page.
 const links = [
   { href: "/#about", label: "Hakkımda" },
-  { href: "/#services", label: "Çalışmalar" },
+  { href: "/#services", label: "Çalışmalarım" },
   { href: "/#testimonials", label: "Hikayeler" },
   { href: "/#contact", label: "İletişim" },
 ];
