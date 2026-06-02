@@ -31,5 +31,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.8,
     },
+    ...[
+      "dogum-haritasi",
+      "yildiz-haritasi",
+      "birliktelik-haritasi",
+    ].map((slug) => ({
+      url: `${BASE_URL}/astrolojik-bakis/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
   ];
 }

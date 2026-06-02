@@ -131,6 +131,62 @@ export default function AstrolojikBakisPage() {
           </p>
         </section>
 
+        {/* Harita Analizi */}
+        <section className="mx-auto max-w-5xl px-6 py-5">
+          <h2 className="text-3xl text-plum">Harita Analizi</h2>
+          <p className="mt-4 max-w-3xl text-lg leading-relaxed text-plum/80">
+            Farklı sorulara farklı haritalar yanıt verir. Size en uygun analizi
+            birlikte seçebiliriz.
+          </p>
+          <div className="mt-8 grid gap-5 sm:grid-cols-3">
+            {(
+              [
+                {
+                  href: "/astrolojik-bakis/dogum-haritasi",
+                  icon: "☉",
+                  title: "Doğum Haritası",
+                  desc: "Doğduğunuz anın haritasıyla karakterinizi, güçlü yönlerinizi ve yaşam temalarınızı keşfedin.",
+                  badge: "En İlgi Çeken",
+                },
+                {
+                  href: "/astrolojik-bakis/yildiz-haritasi",
+                  icon: "✶",
+                  title: "Yıldız Haritası",
+                  desc: "Gökyüzünün güncel hareketlerinin size etkisini ve önümüzdeki döneme dair temaları inceleyin.",
+                },
+                {
+                  href: "/astrolojik-bakis/birliktelik-haritasi",
+                  icon: "☌",
+                  title: "Birliktelik Haritası",
+                  desc: "İki haritayı birlikte okuyarak ilişkinizdeki uyum ve gelişim alanlarını anlayın.",
+                },
+              ] as { href: string; icon: string; title: string; desc: string; badge?: string }[]
+            ).map((c) => (
+              <Link
+                key={c.href}
+                href={c.href}
+                className={`group relative flex flex-col rounded-3xl border p-6 transition-all hover:-translate-y-1 hover:shadow-md ${
+                  c.badge ? "border-red-300 bg-red-100" : "border-plum/10 bg-cream-deep"
+                }`}
+              >
+                {c.badge && (
+                  <span className="absolute -top-3 left-6 rounded-full bg-red-500 px-4 py-1 text-xs font-medium uppercase tracking-wide text-white">
+                    {c.badge}
+                  </span>
+                )}
+                <div className="text-3xl text-purple">{c.icon}</div>
+                <h3 className="mt-3 text-2xl font-bold text-plum">{c.title}</h3>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-plum/70">
+                  {c.desc}
+                </p>
+                <span className="mt-4 text-sm font-medium text-purple transition-colors group-hover:text-plum">
+                  Detayları gör →
+                </span>
+              </Link>
+            ))}
+          </div>
+        </section>
+
         {/* Neler konuşulur */}
         <section className="mx-auto max-w-3xl px-6 py-5">
           <h2 className="text-3xl text-plum">Bir Okumada Neler Konuşulur?</h2>
@@ -258,7 +314,7 @@ export default function AstrolojikBakisPage() {
             Kendi hikâyenize gökyüzünün diliyle nazik bir bakış atın. ✨
           </p>
           <Link
-            href="/#book"
+            href={`/?service=${encodeURIComponent("Astrolojik Bakış")}#book`}
             className="mt-8 inline-block rounded-full bg-gold px-8 py-3.5 font-medium text-plum shadow-lg transition-transform hover:scale-[1.03]"
           >
             Randevu Al

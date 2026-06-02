@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useEffect, useState } from "react";
 import { useFormStatus } from "react-dom";
 import { createBooking, type BookingState } from "@/app/actions";
 
@@ -21,6 +21,13 @@ function SubmitButton() {
 
 export default function BookingForm({ services }: { services: string[] }) {
   const [state, formAction] = useActionState(createBooking, initialState);
+  const [service, setService] = useState(services[0]);
+
+  // Preselect a service when arriving via e.g. /?service=Astrolojik%20Bakış#book
+  useEffect(() => {
+    const wanted = new URLSearchParams(window.location.search).get("service");
+    if (wanted && services.includes(wanted)) setService(wanted);
+  }, [services]);
 
   if (state.status === "success") {
     return (
@@ -72,7 +79,12 @@ export default function BookingForm({ services }: { services: string[] }) {
 
       <div className="mt-5">
         <Field label="İlgilendiğiniz çalışma">
-          <select name="service" className="input" defaultValue={services[0]}>
+          <select
+            name="service"
+            className="input"
+            value={service}
+            onChange={(e) => setService(e.target.value)}
+          >
             {services.map((s) => (
               <option key={s}>{s}</option>
             ))}
