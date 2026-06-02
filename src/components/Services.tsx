@@ -7,6 +7,7 @@ const detailPages: Record<string, string> = {
   "bach-flowers": "/bach-cicekleri",
   "scio-quantum-biofeedback": "/scio-quantum-biofeedback",
   "astrolojik-bakis": "/astrolojik-bakis",
+  "chakra-balancing": "/cakra-dengeleme",
 };
 
 function formatDuration(min: number) {
@@ -46,6 +47,8 @@ export default function Services({ services }: { services: Service[] }) {
             const isBach = s.slug === "bach-flowers";
             // The SCIO card shows the device image (white bg removed) below the text.
             const isScio = s.slug === "scio-quantum-biofeedback";
+            // "Çakra Dengeleme" gets a light-green look + "En Dengeli" badge.
+            const isCakra = s.slug === "chakra-balancing";
             return (
               <TrackedLink
                 key={s.id}
@@ -60,7 +63,9 @@ export default function Services({ services }: { services: Service[] }) {
                       ? "border-sky-200 bg-sky-50"
                       : isBach
                         ? "border-rose-300 bg-rose-100"
-                        : "border-plum/10 bg-cream"
+                        : isCakra
+                          ? "border-green-200 bg-green-50"
+                          : "border-plum/10 bg-cream"
                 }`}
               >
                 {s.featured && (
@@ -76,6 +81,11 @@ export default function Services({ services }: { services: Service[] }) {
                 {isBach && (
                   <span className="absolute -top-3 left-8 rounded-full bg-rose-400 px-4 py-1 text-xs font-medium uppercase tracking-wide text-white">
                     En Popüler
+                  </span>
+                )}
+                {isCakra && (
+                  <span className="absolute -top-3 left-8 rounded-full bg-green-500 px-4 py-1 text-xs font-medium uppercase tracking-wide text-white">
+                    En Dengeli
                   </span>
                 )}
                 <div
