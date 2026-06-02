@@ -61,7 +61,7 @@ export default function YildizHaritasiPage() {
           </p>
 
           {/* Interactive current-sky (transit) chart generator */}
-          <div className="mt-6 rounded-3xl bg-green-300 p-6 md:p-8">
+          <div className="mt-6 rounded-3xl bg-blue-100 p-6 md:p-8">
             <h3 className="text-xl text-plum">Güncel Gökyüzünü Şimdi Görün</h3>
             <p className="mt-2 mb-5 text-plum/70">
               Konumunuzu seçin; o ana ait gökyüzü çarkı anında oluşsun. Dilerseniz
