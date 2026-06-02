@@ -28,6 +28,16 @@ const services = [
     order: 2,
   },
   {
+    slug: "astrolojik-bakis",
+    title: "Astrolojik Bakış",
+    description:
+      "Doğum haritanız üzerinden kişiye özel bir astrolojik okuma; yaşam temalarınızı, güçlü yönlerinizi ve içsel potansiyelinizi nazikçe aydınlatan bir bakış.",
+    icon: "✶",
+    priceLabel: "",
+    durationMin: 60,
+    order: 3,
+  },
+  {
     slug: "chakra-balancing",
     title: "Çakra Dengeleme",
     description:
@@ -35,7 +45,7 @@ const services = [
     icon: "❋",
     priceLabel: "$100",
     durationMin: 75,
-    order: 3,
+    order: 4,
   },
   {
     slug: "distance-healing",
@@ -45,7 +55,7 @@ const services = [
     icon: "✸",
     priceLabel: "$75",
     durationMin: 45,
-    order: 4,
+    order: 5,
   },
   {
     slug: "guided-meditation",
@@ -55,7 +65,7 @@ const services = [
     icon: "✿",
     priceLabel: "$60",
     durationMin: 45,
-    order: 5,
+    order: 6,
   },
   {
     slug: "discovery-call",
@@ -65,7 +75,7 @@ const services = [
     icon: "✦",
     priceLabel: "Ücretsiz",
     durationMin: 20,
-    order: 6,
+    order: 7,
   },
 ];
 

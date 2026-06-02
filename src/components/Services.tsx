@@ -5,6 +5,7 @@ import type { Service } from "@prisma/client";
 const detailPages: Record<string, string> = {
   "bach-flowers": "/bach-cicekleri",
   "scio-quantum-biofeedback": "/scio-quantum-biofeedback",
+  "astrolojik-bakis": "/astrolojik-bakis",
 };
 
 function formatDuration(min: number) {
@@ -38,6 +39,8 @@ export default function Services({ services }: { services: Service[] }) {
           {services.map((s) => {
             const detail = detailPages[s.slug];
             const href = detail ?? "#book";
+            // "Astrolojik Bakış" gets a distinct light-blue look + "En Aranan" badge.
+            const isAstro = s.slug === "astrolojik-bakis";
             return (
               <Link
                 key={s.id}
@@ -45,12 +48,19 @@ export default function Services({ services }: { services: Service[] }) {
                 className={`reveal group relative flex flex-col rounded-3xl border p-8 transition-all hover:-translate-y-1 hover:shadow-xl ${
                   s.featured
                     ? "border-gold bg-gradient-to-b from-plum to-plum-soft text-cream shadow-lg"
-                    : "border-plum/10 bg-cream"
+                    : isAstro
+                      ? "border-sky-200 bg-sky-50"
+                      : "border-plum/10 bg-cream"
                 }`}
               >
                 {s.featured && (
                   <span className="absolute -top-3 left-8 rounded-full bg-gold px-4 py-1 text-xs font-medium uppercase tracking-wide text-plum">
                     En Sevilen
+                  </span>
+                )}
+                {isAstro && (
+                  <span className="absolute -top-3 left-8 rounded-full bg-sky-500 px-4 py-1 text-xs font-medium uppercase tracking-wide text-white">
+                    En Aranan
                   </span>
                 )}
                 <div
