@@ -163,8 +163,10 @@ export default function AstrolojikBakisPage() {
                   icon: "☌",
                   title: "Birliktelik Haritası",
                   desc: "İki haritayı birlikte okuyarak ilişkinizdeki uyum ve gelişim alanlarını anlayın.",
+                  badge: "En Romantik",
+                  tone: "fuchsia",
                 },
-              ] as { href: string; icon: string; title: string; desc: string; badge?: string; tone?: "red" | "blue" }[]
+              ] as { href: string; icon: string; title: string; desc: string; badge?: string; tone?: "red" | "blue" | "fuchsia" }[]
             ).map((c) => (
               <Link
                 key={c.href}
@@ -174,13 +176,15 @@ export default function AstrolojikBakisPage() {
                     ? "border-blue-200 bg-blue-100"
                     : c.tone === "red"
                       ? "border-red-300 bg-red-100"
-                      : "border-plum/10 bg-cream-deep"
+                      : c.tone === "fuchsia"
+                        ? "border-fuchsia-200 bg-fuchsia-100"
+                        : "border-plum/10 bg-cream-deep"
                 }`}
               >
                 {c.badge && (
                   <span
                     className={`absolute -top-3 left-6 rounded-full px-4 py-1 text-xs font-medium uppercase tracking-wide text-white ${
-                      c.tone === "blue" ? "bg-blue-500" : "bg-red-500"
+                      c.tone === "blue" ? "bg-blue-500" : c.tone === "fuchsia" ? "bg-fuchsia-500" : "bg-red-500"
                     }`}
                   >
                     {c.badge}

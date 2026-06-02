@@ -3,6 +3,7 @@ import Link from "next/link";
 import TrackedLink from "@/components/TrackedLink";
 import Footer from "@/components/Footer";
 import SubHeader from "@/components/SubHeader";
+import SynastryForm from "@/components/SynastryForm";
 
 export const metadata: Metadata = {
   title: "Birliktelik Haritası — Astrolojik Bakış | Hale Bayramoğlu",
@@ -58,6 +59,16 @@ export default function BirliktelikHaritasiPage() {
             doğum yeri gereklidir. Saatler tam bilinmiyorsa yaklaşık değerlerle
             de anlamlı bir okuma yapılabilir.
           </p>
+
+          {/* Interactive synastry (bi-wheel) generator */}
+          <div className="mt-6 rounded-3xl bg-fuchsia-100 p-6 md:p-8">
+            <h3 className="text-xl text-plum">Birliktelik Haritanızı Şimdi Oluşturun</h3>
+            <p className="mt-2 mb-5 text-plum/70">
+              İki kişinin bilgilerini girin, çift çark haritası ve karşılıklı açılar
+              anında oluşturulsun.
+            </p>
+            <SynastryForm />
+          </div>
         </section>
 
         <section className="mx-auto max-w-3xl px-6 py-5">
