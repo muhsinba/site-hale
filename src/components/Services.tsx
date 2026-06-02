@@ -84,7 +84,7 @@ export default function Services({ services }: { services: Service[] }) {
                   {s.title}
                 </h3>
                 <p
-                  className={`mt-3 leading-relaxed ${isScio ? "" : "flex-1"} ${s.featured ? "text-cream/80" : "text-plum/70"}`}
+                  className={`mt-3 leading-relaxed ${isScio || isAstro ? "" : "flex-1"} ${s.featured ? "text-cream/80" : "text-plum/70"}`}
                 >
                   {s.description}
                 </p>
@@ -102,6 +102,17 @@ export default function Services({ services }: { services: Service[] }) {
                       width={960}
                       height={540}
                       className="relative h-auto w-full max-w-[253px]"
+                    />
+                  </div>
+                )}
+                {isAstro && (
+                  <div className="mt-4 overflow-hidden rounded-xl">
+                    <Image
+                      src="/astro/horoscope.png"
+                      alt="Güneş, ay evreleri ve takımyıldızlardan oluşan gök illüstrasyonu"
+                      width={1000}
+                      height={650}
+                      className="h-auto w-full"
                     />
                   </div>
                 )}
