@@ -33,7 +33,10 @@ function line(x1: number, y1: number, x2: number, y2: number, stroke: string, w:
   return `<line x1="${x1.toFixed(1)}" y1="${y1.toFixed(1)}" x2="${x2.toFixed(1)}" y2="${y2.toFixed(1)}" stroke="${stroke}" stroke-width="${w}" opacity="${opacity}"/>`;
 }
 
-export function buildNatalChartSvg(data: ChartData): string {
+export function buildNatalChartSvg(
+  data: ChartData,
+  ariaLabel = "Doğum haritası çarkı",
+): string {
   const { ascendant: asc, cusps, planets } = data;
   const p: string[] = [];
 
@@ -84,7 +87,7 @@ export function buildNatalChartSvg(data: ChartData): string {
     p.push(`<text x="${px.toFixed(1)}" y="${(py + 6).toFixed(1)}" text-anchor="middle" font-size="16" fill="${PLUM}">${pl.glyph}</text>`);
   });
 
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${SIZE} ${SIZE}" width="100%" height="100%" role="img" aria-label="Doğum haritası çarkı">${p.join("")}</svg>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${SIZE} ${SIZE}" width="100%" height="100%" role="img" aria-label="${ariaLabel}">${p.join("")}</svg>`;
 }
 
 // Map the library's body labels to astrological glyphs.

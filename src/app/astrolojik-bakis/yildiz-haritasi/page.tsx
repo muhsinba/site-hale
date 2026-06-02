@@ -3,6 +3,7 @@ import Link from "next/link";
 import TrackedLink from "@/components/TrackedLink";
 import Footer from "@/components/Footer";
 import SubHeader from "@/components/SubHeader";
+import StarChartForm from "@/components/StarChartForm";
 
 export const metadata: Metadata = {
   title: "Yıldız Haritası — Astrolojik Bakış | Hale Bayramoğlu",
@@ -58,6 +59,16 @@ export default function YildizHaritasiPage() {
             gereklidir. Ayrıca üzerine konuşmak istediğiniz bir dönem ya da konu
             varsa, okumayı buna göre derinleştirebiliriz.
           </p>
+
+          {/* Interactive current-sky (transit) chart generator */}
+          <div className="mt-6 rounded-3xl bg-green-300 p-6 md:p-8">
+            <h3 className="text-xl text-plum">Güncel Gökyüzünü Şimdi Görün</h3>
+            <p className="mt-2 mb-5 text-plum/70">
+              Konumunuzu seçin; o ana ait gökyüzü çarkı anında oluşsun. Dilerseniz
+              farklı bir tarih girerek başka bir dönemin gökyüzüne de bakabilirsiniz.
+            </p>
+            <StarChartForm />
+          </div>
         </section>
 
         <section className="mx-auto max-w-3xl px-6 py-5">
