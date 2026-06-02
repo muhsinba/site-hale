@@ -7,6 +7,9 @@ import ChatWidget from "@/components/ChatWidget";
 // Google Analytics (gtag.js) measurement ID.
 const GA_ID = "G-L4M4JF4D17";
 
+// Microsoft Clarity project ID (session replays + heatmaps).
+const CLARITY_ID = "x0rmr742cr";
+
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
   weight: ["400", "500", "600"],
@@ -54,6 +57,15 @@ export default function RootLayout({
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', '${GA_ID}');`}
+        </Script>
+
+        {/* Microsoft Clarity — session replays + heatmaps */}
+        <Script id="microsoft-clarity" strategy="afterInteractive">
+          {`(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "${CLARITY_ID}");`}
         </Script>
       </body>
     </html>
