@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { trackEvent } from "@/lib/analytics";
 
 // Links point back to the home page sections, so they work from any sub-page.
 const links = [
@@ -38,6 +39,7 @@ export default function SubHeader() {
           ))}
           <Link
             href="/#book"
+            onClick={() => trackEvent("randevu_click", { location: "subheader" })}
             className="rounded-full bg-gold px-5 py-2 font-medium text-plum transition-transform hover:scale-[1.03]"
           >
             Randevu Al
@@ -70,7 +72,11 @@ export default function SubHeader() {
             <li key={l.href}>
               <Link
                 href={l.href}
-                onClick={() => setOpen(false)}
+                onClick={() => {
+                  setOpen(false);
+                  if (l.href === "/#book")
+                    trackEvent("randevu_click", { location: "subheader_mobile" });
+                }}
                 className="block rounded-xl px-4 py-3 text-plum transition-colors hover:bg-cream-deep"
               >
                 {l.label}

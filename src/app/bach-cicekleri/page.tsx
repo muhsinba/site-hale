@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import TrackedLink from "@/components/TrackedLink";
 import Footer from "@/components/Footer";
 import SubHeader from "@/components/SubHeader";
 
@@ -288,12 +289,14 @@ export default function BachCicekleriPage() {
           <p className="mt-4 text-lg leading-relaxed text-plum/75">
             Size en uygun yolu birlikte bulalım.
           </p>
-          <Link
+          <TrackedLink
             href="/#book"
+            location="bach_page"
+            service="Bach Çiçekleri Terapisi"
             className="mt-8 inline-block rounded-full bg-gold px-8 py-3.5 font-medium text-plum shadow-lg transition-transform hover:scale-[1.03]"
           >
             Randevu Al
-          </Link>
+          </TrackedLink>
           <div className="mt-6">
             <Link
               href="/#services"

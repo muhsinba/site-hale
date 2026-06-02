@@ -1,3 +1,5 @@
+import TrackedLink from "@/components/TrackedLink";
+
 export default function Hero() {
   return (
     <section
@@ -40,12 +42,13 @@ export default function Hero() {
           seansları.
         </p>
         <div className="reveal mt-10 flex flex-wrap items-center justify-center gap-4">
-          <a
+          <TrackedLink
             href="#book"
+            location="hero"
             className="rounded-full bg-gold px-8 py-3.5 font-medium text-plum shadow-lg transition-transform hover:scale-105"
           >
             Randevu Al
-          </a>
+          </TrackedLink>
           <a
             href="#services"
             className="rounded-full bg-sky-200 px-8 py-3.5 font-medium text-plum shadow-lg transition-transform hover:scale-105"

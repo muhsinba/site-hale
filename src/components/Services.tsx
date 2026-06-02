@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import TrackedLink from "@/components/TrackedLink";
 import type { Service } from "@prisma/client";
 
 // Services that have a dedicated detail page: slug -> route.
@@ -47,9 +47,12 @@ export default function Services({ services }: { services: Service[] }) {
             // The SCIO card shows the device image (white bg removed) below the text.
             const isScio = s.slug === "scio-quantum-biofeedback";
             return (
-              <Link
+              <TrackedLink
                 key={s.id}
                 href={href}
+                event={detail ? "select_service" : "randevu_click"}
+                location="services_card"
+                service={s.title}
                 className={`reveal group relative flex flex-col rounded-3xl border p-8 transition-all hover:-translate-y-1 hover:shadow-xl ${
                   s.featured
                     ? "border-gold bg-gradient-to-b from-plum-soft to-purple text-cream shadow-lg"
@@ -132,7 +135,7 @@ export default function Services({ services }: { services: Service[] }) {
                 >
                   {detail ? "Detayları gör →" : "Randevu al →"}
                 </span>
-              </Link>
+              </TrackedLink>
             );
           })}
         </div>

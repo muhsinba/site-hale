@@ -1,4 +1,5 @@
 import Link from "next/link";
+import TrackedLink from "@/components/TrackedLink";
 
 export default function Footer() {
   // PERSONALIZE: contact details and social links
@@ -84,19 +85,40 @@ export default function Footer() {
         <div className="reveal">
           <h4 className="mb-4 text-lg text-cream">Takip edin</h4>
           <ul className="space-y-3 text-cream/75">
-            {socials.map((s) => (
-              <li key={s.label}>
-                <a
-                  href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 hover:text-gold-light transition-colors"
-                >
+            {socials.map((s) => {
+              const cls =
+                "flex items-center gap-2 hover:text-gold-light transition-colors";
+              const inner = (
+                <>
                   {s.icon}
                   {s.label}
-                </a>
-              </li>
-            ))}
+                </>
+              );
+              return (
+                <li key={s.label}>
+                  {s.href.includes("wa.me") ? (
+                    <TrackedLink
+                      href={s.href}
+                      external
+                      event="whatsapp_click"
+                      location="footer"
+                      className={cls}
+                    >
+                      {inner}
+                    </TrackedLink>
+                  ) : (
+                    <a
+                      href={s.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={cls}
+                    >
+                      {inner}
+                    </a>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>

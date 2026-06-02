@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { trackEvent } from "@/lib/analytics";
 
 const links = [
   { href: "#about", label: "Hakkımda" },
@@ -59,6 +60,7 @@ export default function Header() {
           <li>
             <a
               href="#book"
+              onClick={() => trackEvent("randevu_click", { location: "header" })}
               className={`rounded-full px-5 py-2.5 transition-colors ${
                 scrolled
                   ? "bg-purple text-cream hover:bg-plum-soft"
@@ -105,7 +107,11 @@ export default function Header() {
             <li key={l.href}>
               <a
                 href={l.href}
-                onClick={() => setOpen(false)}
+                onClick={() => {
+                  setOpen(false);
+                  if (l.href === "#book")
+                    trackEvent("randevu_click", { location: "header_mobile" });
+                }}
                 className="block rounded-xl px-4 py-3 text-plum hover:bg-cream-deep transition-colors"
               >
                 {l.label}

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useRef, useState } from "react";
+import { trackEvent } from "@/lib/analytics";
 import { buildNatalChartSvg, PLANET_GLYPHS, type ChartData } from "@/lib/natalChart";
 import { TURKEY_CITIES as CITIES } from "@/lib/turkeyCities";
 
@@ -232,6 +233,12 @@ export default function BirthChartForm() {
           <div className="mt-6 text-center">
             <Link
               href={`/?service=${encodeURIComponent("Astrolojik Bakış")}#book`}
+              onClick={() =>
+                trackEvent("randevu_click", {
+                  location: "natal_chart_result",
+                  service: "Astrolojik Bakış",
+                })
+              }
               className="inline-block rounded-full bg-gold px-8 py-3.5 font-medium text-plum shadow-lg transition-transform hover:scale-[1.03]"
             >
               Randevu Al

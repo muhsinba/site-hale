@@ -3,6 +3,7 @@
 import { useActionState, useEffect, useState } from "react";
 import { useFormStatus } from "react-dom";
 import { createBooking, type BookingState } from "@/app/actions";
+import { trackEvent } from "@/lib/analytics";
 
 const initialState: BookingState = { status: "idle", message: "" };
 
@@ -28,6 +29,12 @@ export default function BookingForm({ services }: { services: string[] }) {
     const wanted = new URLSearchParams(window.location.search).get("service");
     if (wanted && services.includes(wanted)) setService(wanted);
   }, [services]);
+
+  // The conversion: fire once the booking request is accepted. Mark
+  // `booking_submit` as a Key Event in GA4 to track it as a conversion.
+  useEffect(() => {
+    if (state.status === "success") trackEvent("booking_submit", { service });
+  }, [state.status, service]);
 
   if (state.status === "success") {
     return (
