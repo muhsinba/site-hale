@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Service } from "@prisma/client";
 
@@ -43,13 +44,15 @@ export default function Services({ services }: { services: Service[] }) {
             const isAstro = s.slug === "astrolojik-bakis";
             // "Bach Çiçekleri" gets a soft floral (rose) look + "En Popüler" badge.
             const isBach = s.slug === "bach-flowers";
+            // The SCIO card shows the device image (white bg removed) below the text.
+            const isScio = s.slug === "scio-quantum-biofeedback";
             return (
               <Link
                 key={s.id}
                 href={href}
                 className={`reveal group relative flex flex-col rounded-3xl border p-8 transition-all hover:-translate-y-1 hover:shadow-xl ${
                   s.featured
-                    ? "border-gold bg-gradient-to-b from-plum to-plum-soft text-cream shadow-lg"
+                    ? "border-gold bg-gradient-to-b from-plum-soft to-purple text-cream shadow-lg"
                     : isAstro
                       ? "border-sky-200 bg-sky-50"
                       : isBach
@@ -81,10 +84,27 @@ export default function Services({ services }: { services: Service[] }) {
                   {s.title}
                 </h3>
                 <p
-                  className={`mt-3 flex-1 leading-relaxed ${s.featured ? "text-cream/80" : "text-plum/70"}`}
+                  className={`mt-3 leading-relaxed ${isScio ? "" : "flex-1"} ${s.featured ? "text-cream/80" : "text-plum/70"}`}
                 >
                   {s.description}
                 </p>
+                {isScio && (
+                  <div className="relative mt-4 flex flex-1 items-end justify-center">
+                    {/* Soft light halo lifts the device off the dark plum so its
+                        light top edge stays visible. */}
+                    <span
+                      aria-hidden
+                      className="pointer-events-none absolute inset-x-6 bottom-1 top-4 rounded-[50%] bg-cream/25 blur-2xl"
+                    />
+                    <Image
+                      src="/scio/scio-device.png"
+                      alt="SCIO Quantum Biofeedback cihazı"
+                      width={960}
+                      height={540}
+                      className="relative h-auto w-full max-w-[253px]"
+                    />
+                  </div>
+                )}
                 <div className="mt-6">
                   <span
                     className={`text-sm ${s.featured ? "text-cream/60" : "text-plum/50"}`}
