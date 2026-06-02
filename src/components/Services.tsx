@@ -8,6 +8,7 @@ const detailPages: Record<string, string> = {
   "scio-quantum-biofeedback": "/scio-quantum-biofeedback",
   "astrolojik-bakis": "/astrolojik-bakis",
   "chakra-balancing": "/cakra-dengeleme",
+  "distance-healing": "/uzaktan-sifa",
 };
 
 function formatDuration(min: number) {
@@ -49,6 +50,8 @@ export default function Services({ services }: { services: Service[] }) {
             const isScio = s.slug === "scio-quantum-biofeedback";
             // "Çakra Dengeleme" gets a light-green look + "En Dengeli" badge.
             const isCakra = s.slug === "chakra-balancing";
+            // "Uzaktan Şifa" gets a light-blue look + dark-blue "En Şifalı" badge.
+            const isDistance = s.slug === "distance-healing";
             return (
               <TrackedLink
                 key={s.id}
@@ -65,7 +68,9 @@ export default function Services({ services }: { services: Service[] }) {
                         ? "border-rose-300 bg-rose-100"
                         : isCakra
                           ? "border-green-200 bg-green-50"
-                          : "border-plum/10 bg-cream"
+                          : isDistance
+                            ? "border-blue-200 bg-blue-50"
+                            : "border-plum/10 bg-cream"
                 }`}
               >
                 {s.featured && (
@@ -86,6 +91,11 @@ export default function Services({ services }: { services: Service[] }) {
                 {isCakra && (
                   <span className="absolute -top-3 left-8 rounded-full bg-green-500 px-4 py-1 text-xs font-medium uppercase tracking-wide text-white">
                     En Dengeli
+                  </span>
+                )}
+                {isDistance && (
+                  <span className="absolute -top-3 left-8 rounded-full bg-blue-600 px-4 py-1 text-xs font-medium uppercase tracking-wide text-white">
+                    En Şifalı
                   </span>
                 )}
                 <div
