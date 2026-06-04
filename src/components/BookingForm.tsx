@@ -3,7 +3,7 @@
 import { useActionState, useEffect, useState } from "react";
 import { useFormStatus } from "react-dom";
 import { createBooking, type BookingState } from "@/app/actions";
-import { trackEvent } from "@/lib/analytics";
+import { trackEvent, takeBookingOrigin } from "@/lib/analytics";
 
 const initialState: BookingState = { status: "idle", message: "" };
 
@@ -24,16 +24,23 @@ export default function BookingForm({ services }: { services: string[] }) {
   const [state, formAction] = useActionState(createBooking, initialState);
   const [service, setService] = useState(services[0]);
 
-  // Preselect a service when arriving via e.g. /?service=Astrolojik%20Bakış#book
+  // Preselect a service when arriving via e.g. /?service=Astrolojik%20Bakış#book.
+  // Reads window.location, so it must run on the client after mount (not during SSR).
   useEffect(() => {
     const wanted = new URLSearchParams(window.location.search).get("service");
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- client-only URL preselect
     if (wanted && services.includes(wanted)) setService(wanted);
   }, [services]);
 
   // The conversion: fire once the booking request is accepted. Mark
-  // `booking_submit` as a Key Event in GA4 to track it as a conversion.
+  // `booking_submit` as a Key Event in GA4 to track it as a conversion. `location`
+  // carries the originating "Randevu Al" button/page (from the prior randevu_click),
+  // so the funnel can attribute bookings back to where they started.
   useEffect(() => {
-    if (state.status === "success") trackEvent("booking_submit", { service });
+    if (state.status === "success") {
+      const location = takeBookingOrigin();
+      trackEvent("booking_submit", { service, ...(location ? { location } : {}) });
+    }
   }, [state.status, service]);
 
   if (state.status === "success") {

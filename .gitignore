@@ -51,3 +51,10 @@ next-env.d.ts
 
 # scratch dir for locally-generated social/share images
 /.social
+
+# test artifacts
+/coverage
+/test-results
+/playwright-report
+/playwright/.cache
+/ci.db
