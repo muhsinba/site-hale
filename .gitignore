@@ -48,3 +48,6 @@ next-env.d.ts
 
 # local dev/prod server logs
 *-server.log
+
+# scratch dir for locally-generated social/share images
+/.social

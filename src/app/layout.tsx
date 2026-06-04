@@ -7,6 +7,10 @@ import ChatWidget from "@/components/ChatWidget";
 // Google Analytics (gtag.js) measurement ID.
 const GA_ID = "G-L4M4JF4D17";
 
+// Google Ads conversion/remarketing ID. Shares the single gtag.js library loaded
+// below — Google requires only ONE Google tag per page, with one config() per ID.
+const GADS_ID = "AW-961169584";
+
 // Microsoft Clarity project ID (session replays + heatmaps).
 const CLARITY_ID = "x0rmr742cr";
 
@@ -56,7 +60,8 @@ export default function RootLayout({
           {`window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', '${GA_ID}');`}
+gtag('config', '${GA_ID}');
+gtag('config', '${GADS_ID}');`}
         </Script>
 
         {/* Microsoft Clarity — session replays + heatmaps */}
