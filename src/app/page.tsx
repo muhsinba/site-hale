@@ -7,6 +7,7 @@ import Testimonials from "@/components/Testimonials";
 import BookingForm from "@/components/BookingForm";
 import Footer from "@/components/Footer";
 import RevealInit from "@/components/RevealInit";
+import NatalChartPrompt from "@/components/NatalChartPrompt";
 
 // Always read fresh data (bookings/services may change).
 export const dynamic = "force-dynamic";
@@ -56,6 +57,7 @@ export default async function Home() {
       </main>
       <Footer />
       <RevealInit />
+      <NatalChartPrompt />
     </>
   );
 }
