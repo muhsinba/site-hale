@@ -73,6 +73,19 @@ export default function EgitimlerimPage() {
           </p>
         </section>
 
+        {/* Intro video — self-hosted in public/egitim/ */}
+        <section className="mx-auto max-w-4xl px-6 py-5">
+          <video
+            className="aspect-video w-full rounded-2xl bg-plum object-cover shadow-sm"
+            controls
+            preload="metadata"
+            playsInline
+          >
+            <source src="/egitim/holografik-beyin.mp4" type="video/mp4" />
+            Tarayıcınız bu videoyu oynatamıyor.
+          </video>
+        </section>
+
         {/* Benefits */}
         <section className="mx-auto max-w-3xl px-6 py-5">
           <h2 className="text-3xl text-plum">Holografik Beyin Teknikleri Eğitimi ile;</h2>
