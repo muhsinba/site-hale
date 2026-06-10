@@ -9,6 +9,7 @@ const detailPages: Record<string, string> = {
   "astrolojik-bakis": "/astrolojik-bakis",
   "chakra-balancing": "/cakra-dengeleme",
   "distance-healing": "/uzaktan-sifa",
+  "egitimlerim": "/egitimlerim",
 };
 
 function formatDuration(min: number) {
@@ -52,6 +53,8 @@ export default function Services({ services }: { services: Service[] }) {
             const isCakra = s.slug === "chakra-balancing";
             // "Uzaktan Şifa" gets a light-blue look + dark-blue "En Şifalı" badge.
             const isDistance = s.slug === "distance-healing";
+            // "Eğitimlerim" gets an emerald look + blue "En Eğitimli" badge.
+            const isEgitim = s.slug === "egitimlerim";
             return (
               <TrackedLink
                 key={s.id}
@@ -70,7 +73,9 @@ export default function Services({ services }: { services: Service[] }) {
                           ? "border-green-200 bg-green-50"
                           : isDistance
                             ? "border-blue-200 bg-blue-50"
-                            : "border-plum/10 bg-cream"
+                            : isEgitim
+                              ? "border-emerald-300 bg-emerald-100"
+                              : "border-plum/10 bg-cream"
                 }`}
               >
                 {s.featured && (
@@ -96,6 +101,11 @@ export default function Services({ services }: { services: Service[] }) {
                 {isDistance && (
                   <span className="absolute -top-3 left-8 rounded-full bg-blue-600 px-4 py-1 text-xs font-medium uppercase tracking-wide text-white">
                     En Şifalı
+                  </span>
+                )}
+                {isEgitim && (
+                  <span className="absolute -top-3 left-8 rounded-full bg-blue-600 px-4 py-1 text-xs font-medium uppercase tracking-wide text-white">
+                    En Eğitimli
                   </span>
                 )}
                 <div

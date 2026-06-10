@@ -58,13 +58,13 @@ const services = [
     order: 5,
   },
   {
-    slug: "guided-meditation",
-    title: "Rehberli Meditasyon",
+    slug: "egitimlerim",
+    title: "Eğitimlerim",
     description:
-      "Zihni susturan, bedeni yumuşatan ve sizi dinginlik haline geri döndüren, niyet odaklı sakinleştirici bir meditasyon.",
-    icon: "✿",
-    priceLabel: "$60",
-    durationMin: 45,
+      "Bütünsel iyilik ve enerji şifası yolculuğunuzu derinleştirmek için hazırladığım eğitim ve atölye çalışmaları.",
+    icon: "❖",
+    priceLabel: "",
+    durationMin: 120,
     order: 6,
   },
   {
