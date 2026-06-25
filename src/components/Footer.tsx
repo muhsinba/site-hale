@@ -4,7 +4,6 @@ import TrackedLink from "@/components/TrackedLink";
 export default function Footer() {
   // PERSONALIZE: contact details and social links
   const email = "bayramoglusafiyehale@gmail.com";
-  const phone = "+90 542 292 03 24";
   const address = "İstanbul, Türkiye";
   const socials = [
     {
@@ -38,7 +37,7 @@ export default function Footer() {
       // wa.me opens the WhatsApp app on phones, or WhatsApp Web in the browser
       // when no app is installed — works on any device. Number in international
       // format (90 + the line without its leading 0), with a pre-filled message.
-      label: "WhatsApp: +90 542 292 03 24",
+      label: "WhatsApp",
       href: "https://wa.me/905422920324?text=Merhaba%2C%20randevu%20almak%20istiyorum.",
       icon: (
         <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5 fill-current">
@@ -68,14 +67,6 @@ export default function Footer() {
             <li>
               <a href={`mailto:${email}`} className="hover:text-gold-light transition-colors">
                 {email}
-              </a>
-            </li>
-            <li>
-              <a
-                href={`tel:${phone.replace(/[^+\d]/g, "")}`}
-                className="hover:text-gold-light transition-colors"
-              >
-                {phone}
               </a>
             </li>
             <li>{address}</li>
